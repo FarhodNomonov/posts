@@ -22,8 +22,19 @@ function App() {
 
   const sortSelect = (sort) => {
     setSelected(sort);
-    setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
-    console.log(sort.target.value);
+    setPosts(
+      posts.sort((a, b) => {
+        const nameA = a.title.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.body.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      })
+    );
   };
 
   const getPostsFC = () => {
