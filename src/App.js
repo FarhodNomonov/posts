@@ -1,5 +1,5 @@
-import axios from "axios";
 import React from "react";
+import toast from "react-hot-toast";
 import { Search } from "./assets/icon/icon";
 import PostList from "./components/postList";
 import Button from "./components/ui/button/button";
@@ -7,6 +7,7 @@ import WrapperInput from "./components/ui/input/input";
 import Loader from "./components/ui/loader/loader";
 import Select from "./components/ui/select/select";
 import "./styles/App.css";
+import { deleteRequest, getRequest } from "./utils/request";
 
 function App() {
   const [posts, setPosts] = React.useState([]);
@@ -19,10 +20,6 @@ function App() {
     setNewPost({ title: "", description: "" });
   };
 
-  const RemovePost = (post) => {
-    setPosts(posts.filter((del) => del.id === post.id));
-  };
-
   const sortSelect = (sort) => {
     setSelected(sort);
     setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
@@ -31,8 +28,7 @@ function App() {
 
   const getPostsFC = () => {
     setLoading(true);
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
+    getRequest("posts")
       .then(({ data }) => {
         setPosts(data);
         setLoading(false);
@@ -40,6 +36,21 @@ function App() {
       .catch((err) => {
         console.log(err);
         setLoading(false);
+      });
+  };
+
+  const deletePostFC = (id) => {
+    setLoading(true);
+    deleteRequest("posts/", id)
+      .then(() => {
+        getPostsFC();
+        toast.success("Successfully deleted");
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+        toast.error("An error has occurred");
       });
   };
 
@@ -98,7 +109,7 @@ function App() {
         </label>
       </div>
 
-      <PostList posts={posts} remove={RemovePost} />
+      <PostList posts={posts} remove={deletePostFC} />
     </div>
   );
 }

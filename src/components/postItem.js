@@ -11,7 +11,7 @@ function PostItem({ post, number, remove }) {
         <p>{post?.body}</p>
       </div>
       <div className="post_button">
-        <Button title="delete" onClick={() => remove(post)} />
+        <Button title="delete" onClick={remove} />
       </div>
     </div>
   );
