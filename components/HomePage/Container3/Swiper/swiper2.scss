@@ -1,0 +1,43 @@
+#app {
+    height: 100%
+}
+
+html,
+body {
+    position: re;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 10;
+    padding: 0;
+}
+
+.mySwiper2 {
+    width: 100%;
+    height: 100%;
+
+    .swiper-wrapper {
+        position: relative;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+}

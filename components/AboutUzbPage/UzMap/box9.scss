@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.map-container {
+  display: grid;
+  place-content: center;
+  .svg-map {
+    width: 68vw;
+    
+    .cls-5 {
+      fill: #0ea5e9;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+      stroke-width: 0;
+    }
+    path:hover {
+      fill: #0284c7;
+      stroke: #0c4a6e;
+      stroke-width: 1px;
+    }
+  }
+}
