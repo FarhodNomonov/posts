@@ -13,8 +13,6 @@ const Offers = () => {
 
             <Footer />
 
-            <div className='h-screen'></div>
-
         </>
     )
 }

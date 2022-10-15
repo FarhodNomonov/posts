@@ -20,7 +20,15 @@ const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language } = getLanguage();
-  const [open, setOpen] = useState(false);
+  const [open, setopen] = React.useState(false);
+
+  window.addEventListener(
+    "click",
+    () => {
+      setopen(false);
+    },
+    false
+  ); //
 
   useEffect(() => {
     const scrollEvent = window.addEventListener("scroll", (e) => {
@@ -53,19 +61,44 @@ const Navbar = () => {
               <FaWhatsapp className="text-[14px] hover:text-orange cursor-pointer" />
             </div>
           </div>
-          <h6 className="divide-x text-[10px]">
+          <h6 className="divide-x text-[10px] ">
             <select className="pr-2 bg-lang mr-2" onChange={ChangeLanguage}>
               <option value="uz">Uz</option>
               <option value="ru">Ru</option>
               <option value="en">En</option>
             </select>
-            <a className="pr-2 mr-2 pl-2 hover:text-orange uppercase">
-              {language["login"]}
-            </a>
-
-            <a className="pl-2 hover:text-orange uppercase">
-              {language["register"]}
-            </a>
+            <Link href="/login">
+              <a className="pr-2 mr-2 pl-2 hover:text-orange uppercase">
+                {language["login"]}
+              </a>
+            </Link>
+            <Link href="/sign-up">
+              <a className="pl-2 mr-2  hover:text-orange uppercase">
+                {language["register"]}
+              </a>
+            </Link>
+            {/* <button
+            className="pl-2"
+              onClick={(e) => {
+                e.stopPropagation();
+                setopen(!open);
+              }}
+            >
+              User
+            </button> */}
+            {open && (
+              <div className="popup">
+                <div className="popup_title">
+                  {/* <User /> */}
+                  <h1>Hello</h1>
+                  <h1>Dubai</h1>
+                </div>
+                <div className="poput_log_out">
+                  {/* <LogOut /> */}
+                  <p>התנתק</p>
+                </div>
+              </div>
+            )}
           </h6>
         </div>
       </div>
@@ -112,7 +145,7 @@ const Navbar = () => {
                   <Menu.Button className="flex gap-1 items-center relative">
                     <a className="text-[13px] font-[600] py-[10px] group">
                       <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
-                     {language["asia_central"]}
+                      {language["asia_central"]}
                     </a>
                     <ChevronDownIcon
                       className={`w-4 ${
@@ -165,43 +198,6 @@ const Navbar = () => {
                 </a>
               </Link>
             </li>
-            {/* about */}
-            {/* <Menu as="li" className="relative ">
-
-                            {({ open }) => (
-                                <>
-                                    <Menu.Button className='flex gap-1 items-center relative'>
-                                        <a className='text-[13px] font-[600] py-[10px] group'><div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>About</a>
-                                        <ChevronDownIcon className={`w-4 ${open ? "transform -rotate-180" : ""} transition-all`} />
-                                    </Menu.Button>
-
-                                    <Transition
-                                        show={open}
-                                        enter="transition duration-100 ease-out"
-                                        enterFrom="transform scale-95 opacity-0"
-                                        enterTo="transform scale-100 opacity-100"
-                                        leave="transition duration-75 ease-out"
-                                        leaveFrom="transform scale-100 opacity-100"
-                                        leaveTo="transform scale-95 opacity-0"
-                                    >
-                                        <Menu.Items static className="absolute left-0 top-0 bg-white whitespace-nowrap text-slate-700 border shadow p-1 rounded outline-none">
-                                            <Menu.Item as="div" className="hover:bg-orange hover:text-white p-1 rounded">
-                                                <Link href="/about-uzbekistan" className='border-2' >
-                                                    <a>About Uzbekistan</a>
-                                                </Link>
-                                            </Menu.Item>
-                                            <Menu.Item as="div" className="hover:bg-orange hover:text-white p-1 rounded">
-                                                <Link href="/about-us" className='border-2' >
-                                                    <a>About Us</a>
-                                                </Link>
-                                            </Menu.Item>
-                                        </Menu.Items>
-                                    </Transition>
-                                </>
-                            )}
-
-                        </Menu> */}
-
             {/*{language["offers"]} */}
             <li>
               <Link href="/about-us">
@@ -217,7 +213,7 @@ const Navbar = () => {
               <Link href="/offers">
                 <a className="text-[13px] font-[600] py-[10px] relative group">
                   <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
-                 {language["offers"]}
+                  {language["offers"]}
                 </a>
               </Link>
             </li>
@@ -283,7 +279,7 @@ const Navbar = () => {
                   <Menu.Button className="flex gap-1 items-center relative">
                     <a className="text-[13px] font-[600] py-[10px] group">
                       <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
-                     {language["asia_central"]}
+                      {language["asia_central"]}
                     </a>
                     <ChevronDownIcon
                       className={`w-4 ${
@@ -338,7 +334,7 @@ const Navbar = () => {
                 </a>
               </Link>
             </li>
-       
+
             <li>
               <Link href="/about-us">
                 <a className="text-[13px] font-[600] py-[10px] relative group">
@@ -353,7 +349,7 @@ const Navbar = () => {
               <Link href="/offers">
                 <a className="text-[13px] font-[600] py-[10px] relative group">
                   <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
-                 {language["offers"]}
+                  {language["offers"]}
                 </a>
               </Link>
             </li>
@@ -437,7 +433,7 @@ const Navbar = () => {
                 className="text-[24px] font-beyond lowercase text-white tracking-wider font-[500] py-[10px] relative group"
               >
                 <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
-               {language["offers"]}
+                {language["offers"]}
               </a>
             </Link>
           </li>

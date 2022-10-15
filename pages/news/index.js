@@ -13,8 +13,6 @@ const News = () => {
 
             <Footer />
 
-            <div className="h-screen"></div>
-
         </>
     )
 }
