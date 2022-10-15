@@ -20,15 +20,15 @@ const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language } = getLanguage();
-  const [open, setopen] = React.useState(false);
+  // const [open, setopen] = React.useState(false);
 
-  window.addEventListener(
-    "click",
-    () => {
-      setopen(false);
-    },
-    false
-  ); //
+  // window.addEventListener(
+  //   "click",
+  //   () => {
+  //     setopen(false);
+  //   },
+  //   false
+  // ); //
 
   useEffect(() => {
     const scrollEvent = window.addEventListener("scroll", (e) => {
@@ -86,19 +86,6 @@ const Navbar = () => {
             >
               User
             </button> */}
-            {open && (
-              <div className="popup">
-                <div className="popup_title">
-                  {/* <User /> */}
-                  <h1>Hello</h1>
-                  <h1>Dubai</h1>
-                </div>
-                <div className="poput_log_out">
-                  {/* <LogOut /> */}
-                  <p>התנתק</p>
-                </div>
-              </div>
-            )}
           </h6>
         </div>
       </div>
