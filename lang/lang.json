@@ -36,7 +36,9 @@
     "user_name": "username",
     "password": "password",
     "companyAll": "We are more than just a company",
-    "signUp": "Registration"
+    "signUp": "Registration",
+    "fmi": "L.F.M",
+    "phone": "Phone"
   },
   "ru": {
     "login": "Войти",
@@ -75,7 +77,9 @@
     "user_name": "имя пользователя",
     "password": "пароль",
     "companyAll": "Мы больше, чем просто компания",
-    "signUp": "Регистрация"
+    "signUp": "Регистрация",
+    "fmi": "Ф.И.O",
+    "phone": "Телефон"
   },
   "uz": {
     "login": "Kirish",
@@ -114,6 +118,8 @@
     "user_name": "foydalanuvchi",
     "password": "maxfiy so'z",
     "companyAll": "Biz faqat bir kompaniya ko'proq",
-    "signUp": "Ro'yxatdan o'tish"
+    "signUp": "Ro'yxatdan o'tish",
+    "fmi": "F.M.I",
+    "phone": "Telefon"
   }
 }

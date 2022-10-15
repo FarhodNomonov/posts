@@ -15,8 +15,8 @@ function SignUp() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="login_bg h-screen">
-        <div className="flex justify-center items-center pt-5 h-full">
-          <div className="block p-6 rounded-lg shadow-lg bg-white w-3/5 login_container h-72">
+      <div className="pt-5 h-full h-92 ">
+          <div className="block p-6 rounded-lg shadow-lg bg-white w-2/5 login_container h-72">
             <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">
               {language["signUp"]}
             </h5>
@@ -41,7 +41,7 @@ function SignUp() {
         
       "
               id="exampleText0"
-              placeholder={language["user_name"]}
+              placeholder={language["fmi"]}
               name="username"
               {...register("username", { required: true })}
               style={errors.username && { border: "1px solid red" }}
@@ -66,14 +66,14 @@ function SignUp() {
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
               id="exampleText0"
-              placeholder={language["password"]}
+              placeholder={language["phone"]}
               name="password"
               {...register("password", { required: true })}
               style={errors.password && { border: "1px solid red" }}
             />
             <button
               type="submit"
-              className="inline-block px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mt-2  btn_login"
+              className="inline-block px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mt-10  btn_login"
             >
               {language["login"]}
             </button>

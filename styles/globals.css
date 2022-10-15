@@ -112,10 +112,8 @@ a {
   max-width: 50px;
 }
 .login_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
 }
 .btn_login {
   width: 60%;
@@ -156,4 +154,14 @@ a {
 }
 .poput_log_out:hover {
   background: aliceblue;
+}
+@media screen and (max-width: 770px) {
+  .login_container {
+   width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .login_container {
+   width: 90%;
+  }
 }
