@@ -77,15 +77,9 @@ const Navbar = () => {
                 {language["register"]}
               </a>
             </Link>
-            {/* <button
-            className="pl-2"
-              onClick={(e) => {
-                e.stopPropagation();
-                setopen(!open);
-              }}
-            >
-              User
-            </button> */}
+            <Link href="/accaunt">
+              <a className="pl-2 mr-2  hover:text-orange uppercase" >Accaunt</a>
+            </Link>
           </h6>
         </div>
       </div>
