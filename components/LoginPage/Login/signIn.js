@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { getLanguage } from "../../../redux/selector";
+import { postRequest } from "../../../utils/request";
 
 function SignIn() {
   const { language } = getLanguage();
@@ -10,7 +11,19 @@ function SignIn() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    data.password_confirmation = data.password;
+    postRequest("login", data)
+      .then(({ data }) => {
+        localStorage.setItem("token", data.token);
+        dispatch(getUsersSuccess(data?.user));
+        router.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <>

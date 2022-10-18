@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getLanguage } from "../redux/selector";
 import { setLanguage } from "../redux/action/languageActions";
 import { Menu, Transition } from "@headlessui/react";
@@ -13,22 +13,35 @@ import {
   FaWhatsapp,
   FaBars,
 } from "react-icons/fa";
-import { ChevronDownIcon, XIcon } from "@heroicons/react/outline";
+import { ChevronDownIcon, LogoutIcon, XIcon } from "@heroicons/react/outline";
+import { getUsersSuccess, getErrorUser } from "../redux/reducer/Auth/userSlice";
+import { getRequest } from "../utils/request";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language } = getLanguage();
-  // const [open, setopen] = React.useState(false);
+  const user = useSelector(({ user }) => user?.user);
 
-  // window.addEventListener(
-  //   "click",
-  //   () => {
-  //     setopen(false);
-  //   },
-  //   false
-  // ); //
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      getRequest("user", token)
+        .then((data) => {
+          dispatch(getUsersSuccess(data));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
+
+  const logout = () => {
+    dispatch(getErrorUser());
+    window.location.reload();
+  };
 
   useEffect(() => {
     const scrollEvent = window.addEventListener("scroll", (e) => {
@@ -61,25 +74,37 @@ const Navbar = () => {
               <FaWhatsapp className="text-[14px] hover:text-orange cursor-pointer" />
             </div>
           </div>
-          <h6 className="divide-x text-[10px] ">
+          <h6 className="divide-x text-[10px] login_flex">
             <select className="pr-2 bg-lang mr-2" onChange={ChangeLanguage}>
               <option value="uz">Uz</option>
               <option value="ru">Ru</option>
               <option value="en">En</option>
             </select>
-            <Link href="/login">
-              <a className="pr-2 mr-2 pl-2 hover:text-orange uppercase">
-                {language["login"]}
-              </a>
-            </Link>
-            <Link href="/sign-up">
-              <a className="pl-2 mr-2  hover:text-orange uppercase">
-                {language["register"]}
-              </a>
-            </Link>
-            <Link href="/accaunt">
-              <a className="pl-2 mr-2  hover:text-orange uppercase" >Accaunt</a>
-            </Link>
+            {!user?.status ? (
+              <>
+                <LogoutIcon onClick={logout} className="hover:text-orange" />
+              </>
+            ) : (
+              <Link href="/login">
+                <a className="pr-2 mr-2 pl-2 hover:text-orange uppercase">
+                  {language["login"]}
+                </a>
+              </Link>
+            )}
+            {user?.status && (
+              <Link href="/sign-up">
+                <a className="pl-2 mr-2  hover:text-orange uppercase">
+                  {language["register"]}
+                </a>
+              </Link>
+            )}
+            {!user?.status && (
+              <Link href="/accaunt">
+                <a className="pl-2 mr-2  hover:text-orange uppercase">
+                  Accaunt
+                </a>
+              </Link>
+            )}
           </h6>
         </div>
       </div>
