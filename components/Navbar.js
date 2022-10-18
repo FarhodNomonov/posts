@@ -80,25 +80,24 @@ const Navbar = () => {
               <option value="ru">Ru</option>
               <option value="en">En</option>
             </select>
-            {!user?.status ? (
-              <>
-                <LogoutIcon onClick={logout} className="hover:text-orange" />
-              </>
-            ) : (
-              <Link href="/login">
-                <a className="pr-2 mr-2 pl-2 hover:text-orange uppercase">
-                  {language["login"]}
-                </a>
-              </Link>
+
+            {user?.name && (
+              <LogoutIcon onClick={logout} className="hover:text-orange" />
             )}
-            {user?.status && (
+
+          {!user?.name &&  <Link href="/login">
+              <a className="pr-2 mr-2 pl-2 hover:text-orange uppercase">
+                {language["login"]}
+              </a>
+            </Link>}
+            {!user?.name && (
               <Link href="/sign-up">
                 <a className="pl-2 mr-2  hover:text-orange uppercase">
                   {language["register"]}
                 </a>
               </Link>
             )}
-            {!user?.status && (
+            {user?.name && (
               <Link href="/accaunt">
                 <a className="pl-2 mr-2  hover:text-orange uppercase">
                   Accaunt

@@ -1,9 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { getLanguage } from "../../../redux/selector";
 import { postRequest } from "../../../utils/request";
+import { getUsersSuccess } from "../../../redux/reducer/Auth/userSlice";
 
 function SignIn() {
+  const router = useRouter();
+  const dispatch = useDispatch();
   const { language } = getLanguage();
 
   const {
@@ -15,9 +20,11 @@ function SignIn() {
   const onSubmit = (data) => {
     data.password_confirmation = data.password;
     postRequest("login", data)
-      .then(({ data }) => {
+      .then(({data}) => {
+        console.log(data, "login")
         localStorage.setItem("token", data.token);
         dispatch(getUsersSuccess(data?.user));
+        
         router.push("/");
       })
       .catch((err) => {
@@ -54,10 +61,10 @@ function SignIn() {
         
       "
               id="exampleText0"
-              placeholder={language["user_name"]}
-              name="username"
-              {...register("username", { required: true })}
-              style={errors.username && { border: "1px solid red" }}
+              placeholder={language["phone"]}
+              name="phone"
+              {...register("phone", { required: true })}
+              style={errors.phone && { border: "1px solid red" }}
             />
             <input
               type="text"

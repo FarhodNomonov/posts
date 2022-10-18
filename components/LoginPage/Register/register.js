@@ -114,6 +114,7 @@ function SignUp() {
               id="exampleText0"
               placeholder={language["phone"]}
               name="phone"
+              maxLength={11}
               {...register("phone", { required: true })}
               style={errors.phone && { border: "1px solid red" }}
             />
