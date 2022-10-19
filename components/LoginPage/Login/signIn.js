@@ -21,10 +21,8 @@ function SignIn() {
     data.password_confirmation = data.password;
     postRequest("login", data)
       .then(({data}) => {
-        console.log(data, "login")
         localStorage.setItem("token", data.token);
         dispatch(getUsersSuccess(data?.user));
-        
         router.push("/");
       })
       .catch((err) => {

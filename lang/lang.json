@@ -1,5 +1,6 @@
 {
   "en": {
+    "global": "en",
     "login": "Login",
     "register": "Register",
     "home": "Home",
@@ -41,6 +42,7 @@
     "phone": "Phone"
   },
   "ru": {
+    "global": "ru",
     "login": "Войти",
     "register": "Регистрация",
     "home": "Главная",
@@ -82,6 +84,7 @@
     "phone": "Телефон"
   },
   "uz": {
+    "global": "uz",
     "login": "Kirish",
     "register": "Ro'yxatdan o'tish",
     "home": "Sahifa",

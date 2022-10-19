@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getLanguage } from "../redux/selector";
 import { setLanguage } from "../redux/action/languageActions";
@@ -24,7 +24,7 @@ const Navbar = () => {
   const { language } = getLanguage();
   const user = useSelector(({ user }) => user?.user);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const token = localStorage.getItem("token");
 
     if (token) {
@@ -85,11 +85,13 @@ const Navbar = () => {
               <LogoutIcon onClick={logout} className="hover:text-orange" />
             )}
 
-          {!user?.name &&  <Link href="/login">
-              <a className="pr-2 mr-2 pl-2 hover:text-orange uppercase">
-                {language["login"]}
-              </a>
-            </Link>}
+            {!user?.name && (
+              <Link href="/login">
+                <a className="pr-2 mr-2 pl-2 hover:text-orange uppercase">
+                  {language["login"]}
+                </a>
+              </Link>
+            )}
             {!user?.name && (
               <Link href="/sign-up">
                 <a className="pl-2 mr-2  hover:text-orange uppercase">
