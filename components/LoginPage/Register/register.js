@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { getLanguage } from "../../../redux/selector";
 import { postRequest } from "../../../utils/request";
 import { getUsersSuccess } from "../../../redux/reducer/Auth/userSlice";
@@ -25,9 +26,11 @@ function SignUp() {
         localStorage.setItem("token", data.token);
         dispatch(getUsersSuccess(data?.user));
         router.push("/");
+        toast.success("Вы успешно вошли в систему");
       })
       .catch((err) => {
         console.log(err);
+        toast.error("Ошибка авторизации");
       });
   };
 
@@ -114,7 +117,7 @@ function SignUp() {
               id="exampleText0"
               placeholder={language["phone"]}
               name="phone"
-              maxLength={11}
+              maxLength={9}
               {...register("phone", { required: true })}
               style={errors.phone && { border: "1px solid red" }}
             />

@@ -39,7 +39,8 @@
     "companyAll": "We are more than just a company",
     "signUp": "Registration",
     "fmi": "L.F.M",
-    "phone": "Phone"
+    "phone": "Phone",
+    "information": "Customer Information"
   },
   "ru": {
     "global": "ru",
@@ -76,12 +77,13 @@
     "read": "Подробнее",
     "dream": "Попробуйте эти новые места мечты",
     "region": "Регионы",
-    "user_name": "имя пользователя",
+    "user_name": "Имя пользователя",
     "password": "пароль",
     "companyAll": "Мы больше, чем просто компания",
     "signUp": "Регистрация",
     "fmi": "Ф.И.O",
-    "phone": "Телефон"
+    "phone": "Телефон",
+    "information": "Информация о клиенте"
   },
   "uz": {
     "global": "uz",
@@ -123,6 +125,7 @@
     "companyAll": "Biz faqat bir kompaniya ko'proq",
     "signUp": "Ro'yxatdan o'tish",
     "fmi": "F.M.I",
-    "phone": "Telefon"
+    "phone": "Telefon",
+    "information": "Mijoz haqida ma'lumot"
   }
 }
