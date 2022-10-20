@@ -40,7 +40,8 @@
     "signUp": "Registration",
     "fmi": "L.F.M",
     "phone": "Phone",
-    "information": "Customer Information"
+    "information": "Customer Information",
+    "details": "details"
   },
   "ru": {
     "global": "ru",
@@ -83,7 +84,8 @@
     "signUp": "Регистрация",
     "fmi": "Ф.И.O",
     "phone": "Телефон",
-    "information": "Информация о клиенте"
+    "information": "Информация о клиенте",
+    "details": "подробности"
   },
   "uz": {
     "global": "uz",
@@ -126,6 +128,7 @@
     "signUp": "Ro'yxatdan o'tish",
     "fmi": "F.M.I",
     "phone": "Telefon",
-    "information": "Mijoz haqida ma'lumot"
+    "information": "Mijoz haqida ma'lumot",
+    "details": "tafsilotlar"
   }
 }

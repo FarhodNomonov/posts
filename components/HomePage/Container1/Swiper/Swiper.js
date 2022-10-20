@@ -1,55 +1,21 @@
-import React, { useLayoutEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react";
+import { useSelector } from "react-redux";
 import Link from "next/link";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { motion } from "framer-motion";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-// import required modules
 import { Autoplay, Navigation } from "swiper";
 import Image from "next/image";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { getRequest, _URL } from "../../../../utils/request";
+import { _URL } from "../../../../utils/request";
 import { getLanguage } from "../../../../redux/selector";
+import { nameLang, titleLang } from "../../../../utils/func";
 
 export default function SwiperSection() {
-  const [getSwiper, setGetSwiper] = React.useState([]);
   const { language } = getLanguage();
-  const router = useRouter();
-  const { id } = router.query;
-  // const location = useLocation();
-
-  useLayoutEffect(() => {
-    getRequest("category/all")
-      .then((data) => {
-        setGetSwiper(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  const lang = (item) => {
-    return language.global === "uz"
-      ? item.name_uz
-      : language.global === "en"
-      ? item.name_en
-      : item.name_ru;
-  };
-
-  const titleLang = (item) => {
-    return language.global === "uz"
-      ? item.title_uz
-      : language.global === "en"
-      ? item.title_en
-      : item.title_ru;
-  };
+  const categories = useSelector(({ categories }) => categories);
 
   return (
     <>
@@ -69,7 +35,7 @@ export default function SwiperSection() {
         modules={[Autoplay, Navigation]}
         className="mySwiper1"
       >
-        {getSwiper?.map((item) => {
+        {categories?.map((item) => {
           const src = `https://tours.techdatasoft.uz/cover/${item?.cover}`;
           return (
             <SwiperSlide className="relative">
@@ -92,10 +58,10 @@ export default function SwiperSection() {
                         className="flex justify-center items-center flex-col text-white h-full"
                       >
                         <h1 className="text-white text-[50px] xs:text-[80px] sm:text-[112px] font-[900] leading-[1.2]">
-                          {titleLang(item)}
+                          {titleLang(item, language)}
                         </h1>
                         <h1 className="text-white font-beyond text-[40px] xs:text-[70px] sm:text-[100px] leading-[1.2] -mt-[15px] xs:-mt-[25px] sm:-mt-[34px]">
-                          {lang(item)}
+                          {nameLang(item, language)}
                         </h1>
                         <Link href={`tourInfo/${item?.id}`}>
                           <button className="text-[14px] font-[700] text-white leading-[53px] px-[46px] relative overflow-hidden mt-[50px] sm:mt-[80px] rounded-[100vmax] button1">

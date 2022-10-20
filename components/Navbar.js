@@ -16,6 +16,8 @@ import {
 import { ChevronDownIcon, LogoutIcon, XIcon } from "@heroicons/react/outline";
 import { getUsersSuccess, getErrorUser } from "../redux/reducer/Auth/userSlice";
 import { getRequest } from "../utils/request";
+import { getCatergories } from "../redux/reducer/categories";
+
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -59,6 +61,20 @@ const Navbar = () => {
   const ChangeLanguage = (item) => {
     dispatch(setLanguage(item.target.value));
   };
+
+  const categoriesFC = () => {
+    getRequest("category/all")
+      .then((data) => {
+        dispatch(getCatergories(data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useLayoutEffect(() => {
+    categoriesFC();
+  }, []);
 
   return (
     <div>

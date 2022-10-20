@@ -9,7 +9,7 @@ const Tours = () => {
   const { id } = router.query;
   return (
     <>
-      <Container1 />
+      <Container1 id={id} />
       <Container2 />
       <Footer />
       {id}
