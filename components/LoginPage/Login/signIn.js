@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
@@ -6,11 +6,13 @@ import toast from "react-hot-toast";
 import { getLanguage } from "../../../redux/selector";
 import { postRequest } from "../../../utils/request";
 import { getUsersSuccess } from "../../../redux/reducer/Auth/userSlice";
+import Loader from "../../Loader";
 
 function SignIn() {
   const router = useRouter();
   const dispatch = useDispatch();
   const { language } = getLanguage();
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -19,6 +21,7 @@ function SignIn() {
   } = useForm();
 
   const onSubmit = (data) => {
+    setLoading(true);
     data.password_confirmation = data.password;
     postRequest("login", data)
       .then(({ data }) => {
@@ -26,14 +29,17 @@ function SignIn() {
         dispatch(getUsersSuccess(data?.user));
         router.push("/");
         toast.success("Вы успешно вошли в систему");
+        setLoading(false);
       })
       .catch((err) => {
         toast.error("Ошибка авторизации");
+        setLoading(false);
       });
   };
 
   return (
     <>
+      {loading && <Loader />}
       <form onSubmit={handleSubmit(onSubmit)} className="login_bg h-screen">
         <div className="pt-5 h-full h-92 ">
           <div className="block p-6 rounded-lg shadow-lg bg-white w-2/5 login_container h-72">

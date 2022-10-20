@@ -6,11 +6,13 @@ import toast from "react-hot-toast";
 import { getLanguage } from "../../../redux/selector";
 import { postRequest } from "../../../utils/request";
 import { getUsersSuccess } from "../../../redux/reducer/Auth/userSlice";
+import Loader from "../../Loader";
 
 function SignUp() {
   const router = useRouter();
   const dispatch = useDispatch();
   const { language } = getLanguage();
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
@@ -19,16 +21,19 @@ function SignUp() {
   } = useForm();
 
   const onSubmit = (data) => {
+    setLoading(true);
     delete data.username;
     data.password_confirmation = data.password;
     postRequest("register", data)
       .then(({ data }) => {
+        setLoading(false);
         localStorage.setItem("token", data.token);
         dispatch(getUsersSuccess(data?.user));
         router.push("/");
         toast.success("Вы успешно вошли в систему");
       })
       .catch((err) => {
+        setLoading(false);
         console.log(err);
         toast.error("Ошибка авторизации");
       });
@@ -36,6 +41,7 @@ function SignUp() {
 
   return (
     <>
+      {loading && <Loader />}
       <form onSubmit={handleSubmit(onSubmit)} className="login_bg h-screen">
         <div className="pt-5 h-full h-92 ">
           <div className="block p-6 rounded-lg shadow-lg bg-white w-2/5 login_container h-72">
