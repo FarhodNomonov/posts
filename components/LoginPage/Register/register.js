@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { getLanguage } from "../../../redux/selector";
 import { postRequest } from "../../../utils/request";
 import { getUsersSuccess } from "../../../redux/reducer/Auth/userSlice";
-import Loader from "../../Loader";
+import Loader from "../../Ui/Loader";
 
 function SignUp() {
   const router = useRouter();

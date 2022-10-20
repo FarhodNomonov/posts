@@ -11,7 +11,7 @@ import {
 import { nameLang, descriptionLang } from "../../../utils/func";
 import { getLanguage } from "../../../redux/selector";
 import { getRequest } from "../../../utils/request";
-import Loader from "../../Loader";
+import Loader from "../../Ui/Loader";
 
 const sortingByRatingList = [5, 4, 3, 2, 1];
 
@@ -38,11 +38,11 @@ const Container2 = () => {
   }, []);
 
   const Retings = (res) => {
-    let copyItems = []
+    let copyItems = [];
     for (let i = 0; i < res; i++) {
       copyItems.push(i);
     }
-    return copyItems
+    return copyItems;
   };
 
   return (
@@ -265,10 +265,9 @@ const Container2 = () => {
                       </div>
                     </div>
                     <div className="flex mt-[10px]">
-                        {Retings(res?.gradle).map((star) => {
-                                 return <StarIcon className="w-4 text-orange" />;
-                        })}
-
+                      {Retings(res?.gradle).map((i) => {
+                        return <StarIcon key={i} className="w-4 text-orange" />;
+                      })}
                     </div>
                     <p className="py-4 leading-[2]">
                       {descriptionLang(res, language)}
@@ -321,51 +320,13 @@ const Container2 = () => {
         </div>
 
         <div>
-          <h2 className="text-orange pt-14">
-            Private Trips and Group Tours in Uzbekistan
-          </h2>
+          <h2 className="text-orange pt-14">{language["about_uzb"]}</h2>
+          <p className="py-4 leading-[2]">{language["about_uzb_tours"]}</p>
+          <p className="py-4 leading-[2]">{language["about_uzb_tours_two"]}</p>
           <p className="py-4 leading-[2]">
-            Uzbekistan tours take you to the greatest cities of the Silk Road:
-            Samarkand, Khiva, and Bukhara. Old parts of these cities are intact
-            versions of ancient Silk Road cities, where you can wander through
-            alleyways and monuments and see these cities as they looked
-            centuries ago. Recognizing their impressive architecture,
-            atmospheres, and value to humanity, UNESCO has designated them to be
-            World Heritage Sites.
+            {language["about_uzb_tours_three"]}
           </p>
-          <p className="py-4 leading-[2]">
-            As part of our Uzbekistan tours and holiday packages we offer a wide
-            range of activities in addition to visiting historical sites: you
-            can ride a camel in the Kyzylkum Desert, stay in a yurt, taste (or
-            even cook) the best pilaf, or meet master-craftsmen as they make
-            silk fabric in Margilan or pottery in Gijduvan. If you prefer an
-            active holiday, visit the mountain resorts of Chimgan and Beldersay,
-            or head to the Aral Sea for a unique opportunity for adventure
-            seekers, photographers, and ecologists. Alternatively, spend some
-            time in the Nurata Mountains, to see untouched nature and everyday
-            village life while supporting local ecotourism.
-          </p>
-          <p className="py-4 leading-[2]">
-            For those who love the arts, the Fergana Valley, with its rich and
-            colourful textiles and other handicrafts, is ideal. Intricate skills
-            in embroidery, pottery, carpet-weaving and blacksmithing have been
-            handed down through families for six or seven generations. Another
-            option is to head to Nukus, which has one of the best art
-            collections in the region, including the world's second-largest
-            collection of Russian avant-garde art. In Tashkent, attend a ballet
-            or opera performance or dine at one of Uzbekistan’s finest
-            restaurants.
-          </p>
-          <p className="py-4 leading-[2]">
-            Book an Uzbekistan tour with us if you love ancient history,
-            mesmerizing architecture, exotic legends, applied arts, warm
-            hospitality, rich pilaf with crispy bread, and abundant fruits and
-            vegetables grown naturally under the bright sun. We’re pleased to
-            offer both small group tours and private trips, and can even design
-            a tailor-made travel package just for you! Whichever option you
-            choose, by the time your trip ends, you’ll have an extra piece of
-            baggage and many unforgettable memories to take home!
-          </p>
+          <p className="py-4 leading-[2]">{language["about_uzb_tours_four"]}</p>
         </div>
       </div>
     </>
