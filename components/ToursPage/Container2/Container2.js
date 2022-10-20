@@ -241,7 +241,7 @@ const Container2 = () => {
                       unoptimized
                     />
                     <div className="absolute bg-orange bottom-8 text-[30px] text-white font-semibold px-4 w-[80%]">
-                      {nameLang(res, language)}
+                      {nameLang(res, language)} dad
                     </div>
                   </div>
                   <div className="flex flex-col">
