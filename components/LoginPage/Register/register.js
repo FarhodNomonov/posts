@@ -2,7 +2,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { getLanguage } from "../../../redux/selector";
 import { postRequest } from "../../../utils/request";
 import { getUsersSuccess } from "../../../redux/reducer/Auth/userSlice";
