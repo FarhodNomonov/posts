@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import store from "../redux/store";
-import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 import "../styles/globals.css";
 import "../components/HomePage/Container1/Swiper/swiper1.scss";
 import "../components/HomePage/Container5/Swiper/swiper2.scss";
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <Navbar />
         <Component {...pageProps} />
-        <Toaster />
+        {/* <Toaster /> */}
       </Provider>
     </>
   );

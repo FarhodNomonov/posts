@@ -30,12 +30,12 @@ function SignUp() {
         localStorage.setItem("token", data.token);
         dispatch(getUsersSuccess(data?.user));
         router.push("/");
-        toast.success("Вы успешно вошли в систему");
+        // toast.success("Вы успешно вошли в систему");
       })
       .catch((err) => {
         setLoading(false);
         console.log(err);
-        toast.error("Ошибка авторизации");
+        // toast.error("Ошибка авторизации");
       });
   };
 
