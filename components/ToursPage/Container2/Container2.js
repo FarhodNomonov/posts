@@ -24,12 +24,14 @@ const Container2 = () => {
   const { language } = getLanguage();
   const [loading, setLoading] = useState(false);
   const [getTours, setGetTours] = useState([]);
+  const [getToursFilter, setGetToursFilter] = useState([]);
 
   React.useEffect(() => {
     setLoading(true);
     getRequest("mix/all/product/20")
       .then((data) => {
         setLoading(false);
+        setGetToursFilter(data);
         setGetTours(data);
       })
       .catch((err) => {
@@ -56,12 +58,19 @@ const Container2 = () => {
             as="div"
             className="relative z-10 max-w-[250px] w-full "
             value={selectedRegion}
-            onChange={setSelectedRegion}
+            onChange={(e) => {
+              setSelectedRegion(e);
+              setGetToursFilter(
+                getTours.filter((item) => item?.category === e.id)
+              );
+            }}
           >
             {({ open }) => (
               <>
                 <Listbox.Button className="border flex justify-between items-center gap-4 p-1 w-full rounded group">
-                  {selectedRegion === "all" ? "Region list" : selectedRegion}
+                  {selectedRegion === "all"
+                    ? "Region list"
+                    : selectedRegion?.name}
                   <SelectorIcon className="w-4 group-hover:text-darkBlueColor" />
                 </Listbox.Button>
 
@@ -79,13 +88,9 @@ const Container2 = () => {
                       {({ active, selected }) => (
                         <p
                           className={`
-                                                        ${
-                                                          active
-                                                            ? "bg-sky-500 text-white"
-                                                            : ""
-                                                        }
-                                                        p-1 rounded flex pl-5 relative items-center
-                                                    `}
+                           ${
+                             active ? "bg-sky-500 text-white" : ""
+                           } p-1 rounded flex pl-5 relative items-center`}
                         >
                           {selected && (
                             <CheckIcon className="w-4 absolute left-0" />
@@ -97,18 +102,13 @@ const Container2 = () => {
                     {categories.map((item, index) => (
                       <Listbox.Option
                         key={item?.id}
-                        value={nameLang(item, language)}
+                        value={{ name: nameLang(item, language), id: item?.id }}
                       >
                         {({ active, selected }) => (
                           <p
                             className={`
-                                                        ${
-                                                          active
-                                                            ? "bg-sky-500 text-white"
-                                                            : ""
-                                                        }
-                                                        p-1 rounded flex pl-5 relative items-center
-                                                    `}
+                               ${active ? "bg-sky-500 text-white" : ""}
+                                p-1 rounded flex pl-5 relative items-center`}
                           >
                             {selected && (
                               <CheckIcon className="w-4 absolute left-0" />
@@ -129,7 +129,10 @@ const Container2 = () => {
             as="div"
             className="relative max-w-[130px] w-full z-10"
             value={sortingByRating}
-            onChange={setSortingByRating}
+            onChange={(e) => {
+              setSortingByRating(e);
+              setGetToursFilter(getTours?.filter((item) => item?.gradle === e));
+            }}
           >
             {({ open }) => (
               <>
@@ -198,7 +201,24 @@ const Container2 = () => {
 
           {/* sort by name */}
           <button
-            onClick={() => setSortingByName(!sortingByName)}
+            onClick={() => {
+              setSortingByName(!sortingByName);
+              setGetToursFilter(
+                getTours?.sort((a, b) => {
+                  const nameA = nameLang(a, language).toUpperCase(); // ignore upper and lowercase
+                  const nameB = nameLang(b, language).toUpperCase(); // ignore upper and lowercase
+                  if (nameA < nameB) {
+                    return sortingByName ? -1 : 1;
+                  }
+                  if (nameA > nameB) {
+                    return sortingByName ? 1 : -1;
+                  }
+
+                  // names must be equal
+                  return 0;
+                })
+              );
+            }}
             className="border max-w-[130px] w-full flex justify-between items-center gap-4 p-1 rounded group"
           >
             {sortingByName ? "Z to A" : "A to Z"}
@@ -211,7 +231,14 @@ const Container2 = () => {
 
           {/* sort by price */}
           <button
-            onClick={() => setSortingByPrice(!sortingByPrice)}
+            onClick={() => {
+              setSortingByPrice(!sortingByPrice);
+              setGetToursFilter(
+                getTours.sort((a, b) =>
+                  sortingByPrice ? a?.price - b?.price : b?.price - a?.price
+                )
+              );
+            }}
             className="border max-w-[130px] w-full flex justify-between items-center gap-4 p-1 rounded group"
           >
             {sortingByPrice ? "Price (asc)" : "Price (desc)"}
@@ -228,7 +255,7 @@ const Container2 = () => {
           <div className="py-[50px] row-span-2 col-span-2 flex flex-col gap-12">
             {/* Mountain Tours */}
 
-            {getTours?.map((res) => {
+            {getToursFilter?.map((res) => {
               const src = `https://tours.techdatasoft.uz/cover/${res?.cover}`;
               return (
                 <div className="flex gap-8" key={res?.id}>
