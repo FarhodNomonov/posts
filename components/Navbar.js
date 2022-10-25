@@ -17,7 +17,7 @@ import { ChevronDownIcon, LogoutIcon, XIcon } from "@heroicons/react/outline";
 import { getUsersSuccess, getErrorUser } from "../redux/reducer/Auth/userSlice";
 import { getRequest } from "../utils/request";
 import { getCatergories } from "../redux/reducer/categories";
-
+import { getTours } from "../redux/reducer/tours";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -72,8 +72,19 @@ const Navbar = () => {
       });
   };
 
+  const getToursFC = () => {
+    getRequest("mix/all/product/20")
+      .then((data) => {
+        dispatch(getTours(data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useLayoutEffect(() => {
     categoriesFC();
+    getToursFC();
   }, []);
 
   return (

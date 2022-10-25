@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import Link from "next/link";
 import { Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
 import {
@@ -10,12 +11,11 @@ import {
 } from "@heroicons/react/outline";
 import { nameLang, descriptionLang } from "../../../utils/func";
 import { getLanguage } from "../../../redux/selector";
-import { getRequest } from "../../../utils/request";
 import Loader from "../../Ui/Loader";
 
 const sortingByRatingList = [5, 4, 3, 2, 1];
 
-const Container2 = () => {
+const Container2 = ({ id }) => {
   const categories = useSelector(({ categories }) => categories);
   const [selectedRegion, setSelectedRegion] = useState("all");
   const [sortingByRating, setSortingByRating] = useState("all");
@@ -23,21 +23,8 @@ const Container2 = () => {
   const [sortingByPrice, setSortingByPrice] = useState("");
   const { language } = getLanguage();
   const [loading, setLoading] = useState(false);
-  const [getTours, setGetTours] = useState([]);
+  const getTours = useSelector(({ tours }) => tours);
   const [getToursFilter, setGetToursFilter] = useState([]);
-
-  React.useEffect(() => {
-    setLoading(true);
-    getRequest("mix/all/product/20")
-      .then((data) => {
-        setLoading(false);
-        setGetToursFilter(data);
-        setGetTours(data);
-      })
-      .catch((err) => {
-        setLoading(false);
-      });
-  }, []);
 
   const Retings = (res) => {
     let copyItems = [];
@@ -56,7 +43,7 @@ const Container2 = () => {
           {/* region */}
           <Listbox
             as="div"
-            className="relative z-10 max-w-[250px] w-full "
+            className="relative z-10 max-w-[250px] w-full"
             value={selectedRegion}
             onChange={(e) => {
               setSelectedRegion(e);
@@ -334,11 +321,13 @@ const Container2 = () => {
                       </div>
                     </div>
                     <p className="py-4 leading-[2]">{res?.direction}</p>
-                    <a href="/about-tours">
-                      <button className="text-[14px] font-[700] text-white p-4 bg-[#31124b] transition-all hover:shadow hover:shadow-[#31124b] px-[46px] lg:self-start mt-auto rounded-[100vmax]">
-                        {language["details"]}...
-                      </button>
-                    </a>
+                    <Link href={`/about-tours/${res?.id}`}>
+                      <a>
+                        <button className="text-[14px] font-[700] text-white p-4 bg-[#31124b] transition-all hover:shadow hover:shadow-[#31124b] px-[46px] lg:self-start mt-auto rounded-[100vmax]">
+                          {language["details"]}...
+                        </button>
+                      </a>
+                    </Link>
                   </div>
                 </div>
               );
