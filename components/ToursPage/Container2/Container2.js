@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Link from "next/link";
 import { Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
@@ -48,7 +48,9 @@ const Container2 = ({ id }) => {
             onChange={(e) => {
               setSelectedRegion(e);
               setGetToursFilter(
-                getTours.filter((item) => item?.category === e.id)
+                getTours.filter((item) =>
+                  selectedRegion === "all" ? item : item?.category === e.id
+                )
               );
             }}
           >
@@ -255,7 +257,7 @@ const Container2 = ({ id }) => {
                       unoptimized
                     />
                     <div className="absolute bg-orange bottom-8 text-[30px] text-white font-semibold px-4 w-[80%]">
-                      {nameLang(res, language)} dad
+                      {nameLang(res, language)}
                     </div>
                   </div>
                   <div className="flex flex-col">
@@ -288,36 +290,44 @@ const Container2 = ({ id }) => {
                     </p>
                     <div className="flex gap-4">
                       <div className="w-7 h-7 relative">
-                        <Image
-                          src="/images/extraIcons/post.webp"
-                          layout="fill"
-                          objectFit="contain"
-                          alt="img"
-                        />
+                        {res?.turn === 1 && (
+                          <Image
+                            src="/images/extraIcons/post.webp"
+                            layout="fill"
+                            objectFit="contain"
+                            alt="img"
+                          />
+                        )}
                       </div>
                       <div className="w-7 h-7 relative">
-                        <Image
-                          src="/images/extraIcons/compass.webp"
-                          layout="fill"
-                          objectFit="contain"
-                          alt="img"
-                        />
+                        {res?.watch === 1 && (
+                          <Image
+                            src="/images/extraIcons/compass.webp"
+                            layout="fill"
+                            objectFit="contain"
+                            alt="img"
+                          />
+                        )}
                       </div>
                       <div className="w-7 h-7 relative">
-                        <Image
-                          src="/images/extraIcons/bicycle.webp"
-                          layout="fill"
-                          objectFit="contain"
-                          alt="img"
-                        />
+                        {res?.great === 1 && (
+                          <Image
+                            src="/images/extraIcons/bicycle.webp"
+                            layout="fill"
+                            objectFit="contain"
+                            alt="img"
+                          />
+                        )}
                       </div>
                       <div className="w-7 h-7 relative">
-                        <Image
-                          src="/images/extraIcons/boat.webp"
-                          layout="fill"
-                          objectFit="contain"
-                          alt="img"
-                        />
+                        {res?.boat === 1 && (
+                          <Image
+                            src="/images/extraIcons/boat.webp"
+                            layout="fill"
+                            objectFit="contain"
+                            alt="img"
+                          />
+                        )}
                       </div>
                     </div>
                     <p className="py-4 leading-[2]">{res?.direction}</p>

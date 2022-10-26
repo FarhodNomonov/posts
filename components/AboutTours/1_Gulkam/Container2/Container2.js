@@ -12,8 +12,6 @@ const Container2 = () => {
   const { language } = getLanguage();
   const src = `https://tours.techdatasoft.uz/cover/${tours?.cover}`;
 
-  console.log(categories, "categories");
-
   return (
     <div className="main-div grid grid-cols-3 py-[100px]  gap-[20px]">
       {/* left */}

@@ -8,9 +8,7 @@ const News = () => {
         <>
         
             <Container1 />
-
             <Container2 />
-
             <Footer />
 
         </>
