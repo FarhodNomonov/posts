@@ -28,11 +28,11 @@ function SignIn() {
         localStorage.setItem("token", data.token);
         dispatch(getUsersSuccess(data?.user));
         router.push("/");
-        toast.success("Вы успешно вошли в систему");
+        toast.success(language["login_succes"]);
         setLoading(false);
       })
       .catch((err) => {
-        toast.error("Ошибка авторизации");
+        toast.error(language["login_err"]);
         setLoading(false);
       });
   };
