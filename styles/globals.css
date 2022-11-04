@@ -176,3 +176,15 @@ a {
     width: 90%;
   }
 }
+#__next > div:nth-child(2) > div.w-full.h-\[300px\].main-div.mb-\[80px\] > div > div > div.swiper-slide.swiper-slide-active > span > img {
+  height: 300px !important;
+}
+.slider__ {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.slider__ img {
+  width: 100%;
+  height: fit-content;
+}
