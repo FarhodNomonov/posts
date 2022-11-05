@@ -26,6 +26,10 @@ const Container2 = ({ id }) => {
   const getTours = useSelector(({ tours }) => tours);
   const [getToursFilter, setGetToursFilter] = useState([]);
 
+  React.useEffect(() => {
+    setGetToursFilter(getTours);
+  }, []);
+
   const Retings = (res) => {
     let copyItems = [];
     for (let i = 0; i < res; i++) {
@@ -120,9 +124,11 @@ const Container2 = ({ id }) => {
             value={sortingByRating}
             onChange={(e) => {
               setSortingByRating(e);
-              console.log(e,"eeeeee")
+              console.log(e, "eeeeee");
               setGetToursFilter(
-                getTours?.filter((item) => (e === "all" ? true : item?.gradle === e))
+                getTours?.filter((item) =>
+                  e === "all" ? true : item?.gradle === e
+                )
               );
               // setGetToursFilter(
               //   getTours.filter((item) =>

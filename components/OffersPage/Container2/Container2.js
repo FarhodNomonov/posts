@@ -26,13 +26,9 @@ const Container2 = ({ id }) => {
   const getTours = useSelector(({ tours }) => tours);
   const [getToursFilter, setGetToursFilter] = useState(getTours);
 
-  const SelectChange = useCallback(() => {
-    return setGetToursFilter(
-      getTours.filter((item) =>
-        selectedRegion === "all" ? item?.category === item.id : []
-      )
-    );
-  }, [selectedRegion]);
+  React.useEffect(() => {
+    setGetToursFilter(getTours);
+  }, []);
 
   console.log(getTours, "selectedRegion");
 
@@ -57,12 +53,11 @@ const Container2 = ({ id }) => {
             value={selectedRegion}
             onChange={(e) => {
               setSelectedRegion(e);
-              // setGetToursFilter(
-              //   getTours.filter((item) =>
-              //     selectedRegion === "all" ? item : item?.category === e.id
-              //   )
-              // );
-              SelectChange();
+              setGetToursFilter(
+                getTours.filter((item) =>
+                  !e.id ? true : item?.category === e?.id
+                )
+              );
             }}
           >
             {({ open }) => (
@@ -132,9 +127,12 @@ const Container2 = ({ id }) => {
             onChange={(e) => {
               setSortingByRating(e);
               setGetToursFilter(
-                getTours?.filter((item) =>
-                  sortingByRating === "all" ? item : item?.gradle === e
+                getTours.filter((item) =>
+                  !e.id ? true : item?.gradle === e?.id
                 )
+              );
+              getTours.filter((item) =>
+                !e.id ? true : item?.gradle === e?.id
               );
             }}
           >
@@ -315,28 +313,34 @@ const Container2 = ({ id }) => {
                         )}
                       </div>
                       <div className="w-7 h-7 relative">
-                      {res?.watch === 1 &&  <Image
-                          src="/images/extraIcons/compass.webp"
-                          layout="fill"
-                          objectFit="contain"
-                          alt="img"
-                        />}
+                        {res?.watch === 1 && (
+                          <Image
+                            src="/images/extraIcons/compass.webp"
+                            layout="fill"
+                            objectFit="contain"
+                            alt="img"
+                          />
+                        )}
                       </div>
                       <div className="w-7 h-7 relative">
-                     {res?.great === 1 &&   <Image
-                          src="/images/extraIcons/bicycle.webp"
-                          layout="fill"
-                          objectFit="contain"
-                          alt="img"
-                        />}
+                        {res?.great === 1 && (
+                          <Image
+                            src="/images/extraIcons/bicycle.webp"
+                            layout="fill"
+                            objectFit="contain"
+                            alt="img"
+                          />
+                        )}
                       </div>
                       <div className="w-7 h-7 relative">
-                     {res?.boat === 1 && <Image
-                          src="/images/extraIcons/boat.webp"
-                          layout="fill"
-                          objectFit="contain"
-                          alt="img"
-                        />}
+                        {res?.boat === 1 && (
+                          <Image
+                            src="/images/extraIcons/boat.webp"
+                            layout="fill"
+                            objectFit="contain"
+                            alt="img"
+                          />
+                        )}
                       </div>
                     </div>
                     <p className="py-4 leading-[2]">{res?.direction}</p>
