@@ -48,8 +48,17 @@
     "about_uzb_tours_three": "For those who love the arts, the Fergana Valley, with its rich and colourful textiles and other handicrafts, is ideal. Intricate skills in embroidery, pottery, carpet-weaving and blacksmithing have been handed down through families for six or seven generations. Another option is to head to Nukus, which has one of the best art collections in the region, including the world's second-largest collection of Russian avant-garde art. In Tashkent, attend a ballet or opera performance or dine at one of Uzbekistan’s finest restaurants.",
     "about_uzb_tours_four": "Book an Uzbekistan tour with us if you love ancient history, mesmerizing architecture, exotic legends, applied arts, warm hospitality, rich pilaf with crispy bread, and abundant fruits and vegetables grown naturally under the bright sun. We’re pleased to offer both small group tours and private trips, and can even design a tailor-made travel package just for you! Whichever option you choose, by the time your trip ends, you’ll have an extra piece of baggage and many unforgettable memories to take home!",
     "another_tours": "Another Tours",
-    "login_succes" : "You have successfully logged in",
-    "login_err" : "Authorization error"
+    "login_succes": "You have successfully logged in",
+    "login_err": "Authorization error",
+    "namangan": "Namangan",
+    "namangan_about": "Tours, Attractions and Things To Do in Namangan",
+    "namangan_about_one": "Namangan city dates back to the 17th century, when, in the north of the Ferghana Valley, a settlement for local salt miners of ores (naman kann) has appeared. In the 17th century after the devastating earthquake residents of Aksikent (Ahsykenta) moved here. Aksikent is the ancient city, which once was the center of the Fergana Valley. In the middle of the 18th century the city became the administrative center of the province (viloyat).",
+    "namangan_about_two": "In 1875, Namangan became the part of Russia. At that time the new city was laid under the regular plan. New city was separated from the old part by the fortress, from which, according to established order, streets were laid in a semicircle. In the early twentieth century, Namangan was the second most populous city and center of cotton processing in the Fergana Valley, and then the third largest in the country, after Tashkent and Samarkand.",
+    "namangan_about_three": "Currently, Namangan is developed as the center of light and food industries. The city abounds in green orchards and parks. Not far from Namangan there are ruins of the ancient city of Aksikent. Archaeological researches state that the city had a citadel and strong fortifications. Trade and handicraft production was well-developed here. Before the thirteenth century Accident was the capital of the Ferghana Valley. But then it was destroyed by the Mongols, and in the seventeenth century, the strongest earthquake destroyed it to the ground.",
+    "namangan_pct": "Namangan Pictures",
+    "andijan": "Andijan",
+    "andijan_about_one": "Tourist, Attractions and Things To Do in Andijan",
+    "andijan_about_two": "Ancient Andijan, surrounded by picturesque hills, is situated on the south-east of the Fergana Valley. This city is proud of its venerable age (2000 years) and of the fact that it is the hometown of Muhammad Zahiruddin Babur - the famous poet and commander, representative of the great dynasty of Tamerlane, the founder of the Mogul Empire in India. Today tourists can visit the house of Babur, remained in Andijan."
   },
   "ru": {
     "global": "ru",
@@ -100,8 +109,17 @@
     "about_uzb_tours_three": "Для тех, кто любит искусство, Ферганская долина с ее богатым и красочным текстилем и другими изделиями ручной работы идеально подходит. Сложные навыки в вышивке, гончарном деле, ковроткачестве и кузнечном деле передавались из поколения в поколение на протяжении шести или семи поколений. Другой вариант - отправиться в Нукус, где находится одна из лучших художественных коллекций в регионе, в том числе вторая по величине в мире коллекция русского авангардного искусства. В Ташкенте посетите балетное или оперное представление или поужинайте в одном из лучших ресторанов Узбекистана.",
     "about_uzb_tours_four": "Закажите тур по Узбекистану вместе с нами, если вы любите древнюю историю, завораживающую архитектуру, экзотические легенды, прикладное искусство, теплое гостеприимство, сытный плов с хрустящим хлебом и обилие фруктов и овощей, выращенных естественным путем под ярким солнцем. Мы рады предложить как небольшие групповые туры, так и частные поездки, и даже можем разработать индивидуальный туристический пакет специально для вас! Какой бы вариант вы ни выбрали, к концу поездки у вас будет дополнительное место багажа и много незабываемых воспоминаний, которые вы сможете забрать домой!",
     "another_tours": "Другие туры",
-    "login_succes" : "Вы успешно вошли в систему",
-    "login_err" : "Ошибка авторизации"
+    "login_succes": "Вы успешно вошли в систему",
+    "login_err": "Ошибка авторизации",
+    "namangan": "Наманган",
+    "namangan_about": "Турист, достопримечательности и вещи, чтобы сделать в Намангане",
+    "namangan_about_one": "Город Наманган восходит к 17 веку, когда на севере Ферганской долины появилось поселение местных добытчиков соли из руд (наман канн). В 17 веке после разрушительного землетрясения сюда переселились жители Аксикента (Ahsykenta). Авария - древний город, который когда-то был центром Ферганской долины. В середине 18 века город стал административным центром провинции (вилоята).",
+    "namangan_about_two": "В 1875 году Наманган вошел в состав России. В то время новый город был заложен по регулярному плану. Новый город был отделен от старой части крепостью, от которой, согласно установленному порядку, полукругом были проложены улицы. В начале двадцатого века Наманган был вторым по численности населения городом и центром переработки хлопка в Ферганской долине, а затем третьим по величине в стране после Ташкента и Самарканда.",
+    "namangan_about_three": "В настоящее время Наманган развивается как центр легкой и пищевой промышленности. Город изобилует зелеными садами и парками. Недалеко от Намангана находятся руины древнего города Аксикент. Археологические исследования утверждают, что в городе была цитадель и мощные укрепления. Здесь была хорошо развита торговля и ремесленное производство. До XIII века Авария была столицей Ферганской долины. Но затем он был разрушен монголами, а в семнадцатом веке сильнейшее землетрясение разрушило его до основания.",
+    "namangan_pct": "Фотографии Намангана",
+    "andijan": "Андижан",
+    "andijan_about_one": "Туристы, достопримечательности и чем заняться в Андижане",
+    "andijan_about_two": "Древний Андижан, окруженный живописными холмами, расположен на юго-востоке Ферганской долины. Этот город гордится своим почтенным возрастом (2000 лет) и тем фактом, что это родной город Мухаммеда Захируддина Бабура - знаменитого поэта и полководца, представителя великой династии Тамерлана, основателя империи Великих Моголов в Индии. Сегодня туристы могут посетить дом Бабура, сохранившийся в Андижане."
   },
   "uz": {
     "global": "uz",
@@ -152,7 +170,16 @@
     "about_uzb_tours_three": "San'atni sevadiganlar uchun Farg'ona vodiysi o'zining boy va rang-barang to'qimachilik va boshqa hunarmandchiligi bilan idealdir. Kashtado'zlik, kulolchilik, gilam to'qish va temirchilik bo'yicha murakkab ko'nikmalar olti yoki etti avlod davomida oilalar orqali berilgan. Yana bir variant-mintaqadagi eng yaxshi badiiy kollektsiyalardan biri, shu jumladan dunyodagi ikkinchi yirik rus avangard san'ati to'plamiga ega bo'lgan Nukusga borish. Toshkentda balet yoki opera tomoshasida qatnashish yoki O'zbekistonning eng yaxshi restoranlaridan birida ovqatlanish.",
     "about_uzb_tours_four": "Agar siz qadimiy tarix, maftunkor me'morchilik, ekzotik afsonalar, amaliy san'at, samimiy mehmondo'stlik, tiniq non bilan boy palov, yorqin quyosh ostida tabiiy ravishda etishtirilgan mo'l-ko'l meva va sabzavotlarni yaxshi ko'rsangiz, biz bilan O'zbekistonga sayohat qiling. Biz kichik guruh turlar va xususiy sayohat, ham taklif mamnunmiz, va hatto siz uchun faqat bir tikuvchi-yasalgan safar paketini loyihalashtirish mumkin! Qaysi variantni tanlasangiz ham, sayohatingiz tugaguniga qadar siz uyga olib borish uchun qo'shimcha yuk va ko'plab unutilmas xotiralarga ega bo'lasiz!",
     "another_tours": "Boshqa Turlar",
-    "login_succes" : "Siz muvaffaqiyatli tizimga kirdingiz",
-    "login_err" : "Avtorizatsiya xatosi"
+    "login_succes": "Siz muvaffaqiyatli tizimga kirdingiz",
+    "login_err": "Avtorizatsiya xatosi",
+    "namangan": "Namangan",
+    "namangan_about": "Namanganda sayyohlik, diqqatga sazovor joylar va qilinadigan ishlar",
+    "namangan_about_one": "Namangan shahri 17-asrga oid bo'lib, Farg'ona vodiysining shimolida mahalliy tuz qazib oluvchi rudalar (Nayman kann) uchun shaharcha paydo bo'lgan. 17-asrda zilziladan keyin Axsikent (Ahsykenta) aholisi bu erga ko'chib o'tdilar. Avariya-bir vaqtlar Farg'ona vodiysining markazi bo'lgan qadimiy shahar. 18-asr o'rtalarida shahar viloyat (viloyat) ning ma'muriy markaziga aylandi.",
+    "namangan_about_two": "1875-yilda Namangan Rossiya tarkibiga kirdi. O'sha paytda yangi shahar muntazam reja asosida qurilgan. Yangi shahar eski qismdan qal'a bilan ajralib turardi, undan belgilangan tartibga ko'ra ko'chalar yarim doira shaklida yotqizilgan. XX asr boshlarida Namangan Farg'ona vodiysida paxtani qayta ishlash bo'yicha aholi soni bo'yicha ikkinchi shahar va markaz bo'lib, undan keyin Toshkent va Samarqanddan keyin uchinchi o'rinda turadi.",
+    "namangan_about_three": "Hozirgi kunda Namangan yengil va oziq-ovqat sanoati markazi sifatida rivojlangan. Shahar yashil bog'lar va bog'larda juda ko'p. Namangandan uncha uzoq bo'lmagan joyda qadimiy Axsikent shahri xarobalari bor. Arxeologik tadqiqotlar shuni ko'rsatadiki, shahar qal'a va mustahkam istehkomlarga ega edi. Bu erda savdo va hunarmandchilik ishlab chiqarish yaxshi rivojlangan edi. XIII asr qazosidan oldin Farg'ona vodiysining poytaxti bo'lgan. Ammo keyin u mo'g'ullar tomonidan vayron qilingan va XVII asrda eng kuchli zilzila uni erga vayron qilgan.",
+    "namangan_pct": "Namangan Rasmlari",
+    "andijan": "Andijan",
+    "andijan_about_one": "Andijonda sayyohlik, diqqatga sazovor joylar va qilinadigan ishlar",
+    "andijan_about_two": "Farg'ona vodiysining janubi-sharqida so'lim tepaliklar bilan o'ralgan qadimiy Andijon joylashgan. Bu shahar o'zining hurmatli yoshi (2000 yil) va Muhammad Zahiruddin Boburning tug'ilgan shahri - mashhur shoir va qo'mondon, Buyuk Tamerlan sulolasining vakili, Hindistondagi mo'g'ul imperiyasining asoschisi ekanligi bilan faxrlanadi. Bugun Boburning uyiga sayyohlar tashrif buyurishi mumkin, Andijonda qoldi."
   }
 }
