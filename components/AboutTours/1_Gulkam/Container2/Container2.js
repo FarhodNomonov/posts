@@ -1,12 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { nameLang, descriptionLang } from "../../../../utils/func";
 import { getLanguage } from "../../../../redux/selector";
+import ImagesVisa from "../../../../public/images/Visa_Inc._logo.svg.png";
 
 const Container2 = () => {
-  const [tours] = useSelector(({ tours }) => tours);
+  const router = useRouter();
+  const { id } = router.query;
+  const toursData = useSelector(({ tours }) => tours);
+  const [tours] = toursData.filter((item) => item?.id === Number(id));
   const categories = useSelector(({ categories }) => categories);
 
   const { language } = getLanguage();
@@ -42,6 +47,68 @@ const Container2 = () => {
               {descriptionLang(tours, language)}
             </p>
             {/* <a className='text-[14px] font-[700] text-orange hover:text-darkPurple transition-all' href="#">READ MORE</a> */}
+            <div className="flex gap-5">
+              <form
+                method="POST"
+                action="https://checkout.paycom.uz"
+                target="_blank"
+              >
+                <input
+                  type="hidden"
+                  name="merchant"
+                  defaultValue="62ee516e39c675be34e69a2d"
+                />
+                <input
+                  type="hidden"
+                  name="amount"
+                  defaultValue={tours?.price * 11200 + "00"}
+                />
+                <button
+                  type="submit"
+                  className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ... font-[700] leading-[53px] px-[30px]"
+                  style={{
+                    cursor: "pointer",
+                    border: "1px solid #ebebeb",
+                    borderRadius: "6px",
+                    background: "linear-gradient(to top, #f1f2f2, white)",
+                    width: "200px",
+                    height: "42px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <p className="p-2 text-black"> ${tours?.price} </p>
+
+                  <img
+                    style={{ width: "160px", height: "20px" }}
+                    src="http://cdn.payme.uz/buttons/button_big_RU.svg"
+                  />
+                </button>
+              </form>
+              <button
+                type="submit"
+                className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ... font-[700] leading-[53px] px-[30px]"
+                style={{
+                  cursor: "pointer",
+                  border: "1px solid #ebebeb",
+                  borderRadius: "6px",
+                  background: "linear-gradient(to top, #f1f2f2, white)",
+                  width: "200px",
+                  height: "42px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <p className="p-2 text-black"> ${tours?.price} </p>
+
+                <img
+                  style={{ width: "160px", height: "20px" }}
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -64,6 +131,11 @@ const Container2 = () => {
             </a>
           </Link>
         ))}
+      </div>
+      <div className="about_pay">
+        <button className="text-[14px] font-[700] text-white leading-[53px] px-[46px] relative overflow-hidden mt-[50px] sm:mt-[80px] rounded-[100vmax] button1">
+          <div className="btn1-bg absolute inset-0 -z-[1]"></div>
+        </button>
       </div>
     </div>
   );

@@ -260,6 +260,9 @@ const Container2 = ({ id }) => {
 
             {getToursFilter?.map((res) => {
               const src = `https://tours.techdatasoft.uz/cover/${res?.cover}`;
+              // {
+              //   console.log(res?.price, "res?.price");
+              // }
               return (
                 <div className="flex gap-8" key={res?.id}>
                   <div className="max-w-[350px] w-full aspect-[7/6] relative shadow-md">
