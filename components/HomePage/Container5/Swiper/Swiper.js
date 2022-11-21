@@ -64,30 +64,29 @@ export default function SwiperHotelList() {
         className="mySwiper2"
       >
         {tours?.map((res) => {
-              const src = `https://tours.techdatasoft.uz/cover/${res?.cover}`;
-              console.log(res,"res")
+          const src = `https://tours.techdatasoft.uz/cover/${res?.cover}`;
           return (
             <SwiperSlide>
               <div className="relative w-full aspect-square cursor-grab">
-              <Image
-          src={src}
-          layout="fill"
-          objectFit="cover"
-          alt="img"
-          unoptimized
-        />  
+                <Image
+                  src={src}
+                  layout="fill"
+                  objectFit="cover"
+                  alt="img"
+                  unoptimized
+                />
               </div>
-              <div className="">
+              <div className="max-h-60 overflow-auto ...">
                 <div className=" text-black text-[18px] font-semibold tracking-wider w-[80%] font-sans">
-                  {nameLang(res,language)}
+                  {nameLang(res, language)}
                 </div>
                 <div className="flex">
-                   {Retings(res?.gradle).map((i) => {
-                        return <StarIcon key={i} className="w-4 text-orange" />;
-                      })}
+                  {Retings(res?.gradle).map((i) => {
+                    return <StarIcon key={i} className="w-4 text-orange" />;
+                  })}
                 </div>
                 <p className="py-4 leading-[1.5]">
-                 {descriptionLang(res,language)}
+                  {descriptionLang(res, language)}
                 </p>
               </div>
             </SwiperSlide>
