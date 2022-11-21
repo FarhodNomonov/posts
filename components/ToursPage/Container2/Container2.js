@@ -124,7 +124,6 @@ const Container2 = ({ id }) => {
             value={sortingByRating}
             onChange={(e) => {
               setSortingByRating(e);
-              console.log(e, "eeeeee");
               setGetToursFilter(
                 getTours?.filter((item) =>
                   e === "all" ? true : item?.gradle === e
@@ -206,21 +205,22 @@ const Container2 = ({ id }) => {
           <button
             onClick={() => {
               setSortingByName(!sortingByName);
-              // setGetToursFilter(
-              //   getTours?.sort((a, b) => {
-              //     const nameA = nameLang(a, language).toUpperCase(); // ignore upper and lowercase
-              //     const nameB = nameLang(b, language).toUpperCase(); // ignore upper and lowercase
-              //     if (nameA < nameB) {
-              //       return sortingByName ? -1 : 1;
-              //     }
-              //     if (nameA > nameB) {
-              //       return sortingByName ? 1 : -1;
-              //     }
+              setGetToursFilter(
+                [...getTours]?.sort((a, b) => {
+                  const nameA = descriptionLang(a, language)?.toUpperCase(); // ignore upper and lowercase
+                  const nameB = descriptionLang(b, language)?.toUpperCase(); // ignore upper and lowercase
+                  console.log(nameA, "nameA", nameB, "nameB");
+                  if (nameA < nameB) {
+                    return sortingByName ? -1 : 1;
+                  }
+                  if (nameA > nameB) {
+                    return sortingByName ? 1 : -1;
+                  }
 
-              //     // names must be equal
-              //     return 0;
-              //   })
-              // );
+                  // names must be equal
+                  return 0;
+                })
+              );
             }}
             className="border max-w-[130px] w-full flex justify-between items-center gap-4 p-1 rounded group"
           >
@@ -236,11 +236,11 @@ const Container2 = ({ id }) => {
           <button
             onClick={() => {
               setSortingByPrice(!sortingByPrice);
-              // setGetToursFilter(
-              //   getTours.sort((a, b) =>
-              //     sortingByPrice ? a?.price - b?.price : b?.price - a?.price
-              //   )
-              // );
+              setGetToursFilter(
+                [...getTours].sort((a, b) =>
+                  sortingByPrice ? a?.price - b?.price : b?.price - a?.price
+                )
+              );
             }}
             className="border max-w-[130px] w-full flex justify-between items-center gap-4 p-1 rounded group"
           >
@@ -260,9 +260,7 @@ const Container2 = ({ id }) => {
 
             {getToursFilter?.map((res) => {
               const src = `https://tours.techdatasoft.uz/cover/${res?.cover}`;
-              // {
-              //   console.log(res?.price, "res?.price");
-              // }
+
               return (
                 <div className="flex gap-8" key={res?.id}>
                   <div className="max-w-[350px] w-full aspect-[7/6] relative shadow-md">

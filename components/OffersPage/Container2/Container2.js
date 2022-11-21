@@ -30,8 +30,6 @@ const Container2 = ({ id }) => {
     setGetToursFilter(getTours);
   }, []);
 
-  console.log(getTours, "selectedRegion");
-
   const Retings = (res) => {
     let copyItems = [];
     for (let i = 0; i < res; i++) {
@@ -127,13 +125,15 @@ const Container2 = ({ id }) => {
             onChange={(e) => {
               setSortingByRating(e);
               setGetToursFilter(
-                getTours.filter((item) =>
-                  !e.id ? true : item?.gradle === e?.id
+                getTours?.filter((item) =>
+                  e === "all" ? true : item?.gradle === e
                 )
               );
-              getTours.filter((item) =>
-                !e.id ? true : item?.gradle === e?.id
-              );
+              // setGetToursFilter(
+              //   getTours.filter((item) =>
+              //     !e.id ? true : item?.gradle === e?.id
+              //   )
+              // );
             }}
           >
             {({ open }) => (
@@ -206,9 +206,10 @@ const Container2 = ({ id }) => {
             onClick={() => {
               setSortingByName(!sortingByName);
               setGetToursFilter(
-                getTours?.sort((a, b) => {
-                  const nameA = nameLang(a, language).toUpperCase(); // ignore upper and lowercase
-                  const nameB = nameLang(b, language).toUpperCase(); // ignore upper and lowercase
+                [...getTours]?.sort((a, b) => {
+                  const nameA = descriptionLang(a, language)?.toUpperCase(); // ignore upper and lowercase
+                  const nameB = descriptionLang(b, language)?.toUpperCase(); // ignore upper and lowercase
+                  console.log(nameA, "nameA", nameB, "nameB");
                   if (nameA < nameB) {
                     return sortingByName ? -1 : 1;
                   }
@@ -236,7 +237,7 @@ const Container2 = ({ id }) => {
             onClick={() => {
               setSortingByPrice(!sortingByPrice);
               setGetToursFilter(
-                getTours.sort((a, b) =>
+                [...getTours].sort((a, b) =>
                   sortingByPrice ? a?.price - b?.price : b?.price - a?.price
                 )
               );

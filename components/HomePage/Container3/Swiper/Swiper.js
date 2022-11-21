@@ -111,7 +111,7 @@ export default function SwiperHotelList() {
         })}
       </Swiper>
 
-      <div className="md:flex justify-center gap-8 hidden">
+      <div className="md:flex justify-center gap-8 hidden mt-10">
         <div className="prev hidden md:block group border-orange bg-slate-500 rounded-[9px] overflow-hidden border-2 py-[12px] px-[2px] cursor-pointer">
           <MdKeyboardArrowLeft className="text-[20px] text-orange" />
         </div>
