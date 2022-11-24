@@ -43,11 +43,11 @@ const Container2 = ({ id }) => {
       {loading && <Loader />}
       <div className="main-div py-[100px]">
         {/* sorting and filtering */}
-        <div className="flex gap-[30px]">
+        <div className="flex ml:flex-col gap-[30px]">
           {/* region */}
           <Listbox
             as="div"
-            className="relative z-10 max-w-[250px] w-full"
+            className="relative z-10 max-w-[250px] ml:max-w-full z-50 "
             value={selectedRegion}
             onChange={(e) => {
               setSelectedRegion(e);
@@ -120,7 +120,7 @@ const Container2 = ({ id }) => {
           {/* sort by rating */}
           <Listbox
             as="div"
-            className="relative max-w-[130px] w-full z-10"
+            className="relative max-w-[130px] w-full ml:max-w-full z-10"
             value={sortingByRating}
             onChange={(e) => {
               setSortingByRating(e);
@@ -222,7 +222,7 @@ const Container2 = ({ id }) => {
                 })
               );
             }}
-            className="border max-w-[130px] w-full flex justify-between items-center gap-4 p-1 rounded group"
+            className="border max-w-[130px] w-full flex justify-between items-center gap-4 p-1 rounded group ml:max-w-full"
           >
             {sortingByName ? "Z to A" : "A to Z"}
             <ChevronDownIcon
@@ -242,7 +242,7 @@ const Container2 = ({ id }) => {
                 )
               );
             }}
-            className="border max-w-[130px] w-full flex justify-between items-center gap-4 p-1 rounded group"
+            className="border max-w-[130px] w-full flex justify-between items-center gap-4 p-1 rounded group ml:max-w-full"
           >
             {sortingByPrice ? "Price (asc)" : "Price (desc)"}
             <ChevronDownIcon
@@ -261,7 +261,7 @@ const Container2 = ({ id }) => {
             {getToursFilter?.map((res) => {
               const src = `https://tours.techdatasoft.uz/cover/${res?.cover}`;
               return (
-                <div className="flex gap-8" key={res?.id}>
+                <div className="flex gap-8 ml:flex ml:flex-col" key={res?.id}>
                   <div className="max-w-[350px] w-full aspect-[7/6] relative shadow-md">
                     <Image
                       src={src}

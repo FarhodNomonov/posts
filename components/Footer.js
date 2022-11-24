@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <div className="bg-darkPurple py-[100px]">
       <div className="main-div text-white flex flex-wrap gap-[100px]">
-        <div className="w-[260px]">
+        <div className="w-[260px] ml:w-full">
           <a
             href="#"
             className="text-[25px] sm:text-[30px] font-[800] flex items-end gap-[10px] "
@@ -32,7 +32,7 @@ const Footer = () => {
             Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet,
             consectetur adipiscing elit. Nullam eu convallis tortor.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 ml:justify-evenly ml:gap-0 ">
             <div className="border border-orange p-2 rounded-full">
               <FaTelegramPlane />
             </div>
@@ -122,11 +122,12 @@ const Footer = () => {
             </li>
             <div className="flex gap-5">
               <img
-                style={{ width: "50px", height: "20px" }}
+                style={{ width: "100px", height: "20px" }}
+                className="ml:w-[100px]"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
               />
               <img
-          style={{ width: "50px", height: "20px" }}
+                style={{ width: "100px", height: "20px",padding: "2px",borderRadius: "4px" }}
                 className="bg-white"
                 src="https://cdn.paycom.uz/documentation_assets/payme_01.svg"
               />

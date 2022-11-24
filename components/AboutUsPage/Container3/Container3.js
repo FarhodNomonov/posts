@@ -19,7 +19,7 @@ const Container3 = () => {
 
   return (
     <>
-      <div className="flex justify-evenly py-[80px]">
+      <div className="flex justify-evenly py-[80px] ml:py-[30px]">
         <div className="flex flex-col gap-2 items-center">
           <div className="relative w-12 h-12">
             <Image
@@ -29,7 +29,7 @@ const Container3 = () => {
               alt="img"
             />
           </div>
-          <h1 className="text-[44px] text-black font-semibold">255</h1>
+          <h1 className="text-[44px] text-black font-semibold ml:text-[20px]">255</h1>
           <p className="text-[15px]">CLIENTS</p>
         </div>
         <div className="flex flex-col gap-2 items-center">
@@ -41,7 +41,7 @@ const Container3 = () => {
               alt="img"
             />
           </div>
-          <h1 className="text-[44px] text-black font-semibold">1176</h1>
+          <h1 className="text-[44px] text-black font-semibold ml:text-[20px]" >1176</h1>
           <p className="text-[15px]">PROJECTS</p>
         </div>
         <div className="flex flex-col gap-2 items-center">
@@ -53,7 +53,7 @@ const Container3 = () => {
               alt="img"
             />
           </div>
-          <h1 className="text-[44px] text-black font-semibold">39</h1>
+          <h1 className="text-[44px] text-black font-semibold ml:text-[20px]">39</h1>
           <p className="text-[15px]">COUNTRIES</p>
         </div>
         <div className="flex flex-col gap-2 items-center">
@@ -65,7 +65,7 @@ const Container3 = () => {
               alt="img"
             />
           </div>
-          <h1 className="text-[44px] text-black font-semibold">127</h1>
+          <h1 className="text-[44px] text-black font-semibold ml:text-[20px]">127</h1>
           <p className="text-[15px]">TRAVEL PLACES</p>
         </div>
       </div>

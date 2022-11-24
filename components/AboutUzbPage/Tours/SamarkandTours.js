@@ -44,7 +44,7 @@ const SamarkandTours = () => {
           unoptimized
         />
         <div className="absolute z-[1] inset-0 bg-lightPurple text-center pt-20 grid content-center text-white">
-          <h1 className="text-white font-beyond text-[40px] leading-[1.5]">
+          <h1 className="text-white font-beyond text-[40px] leading-[1.5] ml:text-[36px] mb-[40px]">
             {titleLang(getTours?.tour, language)}
           </h1>
           <h1 className="text-white font-beyond text-[40px] xs:text-[70px] sm:text-[100px] leading-[1.5] -mt-12">
@@ -53,7 +53,7 @@ const SamarkandTours = () => {
         </div>
       </div>
 
-      <div className="main-div grid grid-cols-4 gap-[30px] py-[50px] mt-[40vh]">
+      <div className="main-div grid grid-cols-3 gap-[30px] py-[50px] mt-[40vh]">
         <div className="col-span-3 space-y-4">
           <h1 className="text-orange">
             {titleLang(getTours?.tour, language)}{" "}
@@ -64,12 +64,12 @@ const SamarkandTours = () => {
           </h3> */}
           <p>{parse(descriptionLang(getTours?.tour, language))}</p>
 
-          <div className="py-[50px] flex flex-col gap-12">
+          <div className="py-[50px] flex flex-col gap-12 ">
             {getTours?.data?.map((resp) => {
               const src = `https://tours.techdatasoft.uz/cover/${resp?.cover}`;
               return (
-                <div className="flex gap-8 items-start">
-                  <div className="w-[300px] shrink-0 aspect-[8/9] relative shadow-md">
+                <div className="flex gap-8 items-start ml:flex-col ml:w-full">
+                  <div className="w-[300px] shrink-0 aspect-[8/9] relative shadow-md ml:w-full">
                     <Image
                       src={src}
                       layout="fill"
@@ -166,7 +166,7 @@ const SamarkandTours = () => {
           </div>
         </div>
 
-        <div className="border border-gray-300 p-4 rounded-md h-max">
+        {/* <div className="border border-gray-300 p-4 rounded-md h-max">
           {getTours?.data?.map((res) => {
             return (
               <Link
@@ -180,7 +180,7 @@ const SamarkandTours = () => {
               </Link>
             );
           })}
-        </div>
+        </div> */}
       </div>
 
       <Footer />

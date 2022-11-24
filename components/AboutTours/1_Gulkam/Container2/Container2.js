@@ -18,12 +18,12 @@ const Container2 = () => {
   const src = `https://tours.techdatasoft.uz/cover/${tours?.cover}`;
 
   return (
-    <div className="main-div grid grid-cols-3 py-[100px]  gap-[20px]">
+    <div className="main-div grid grid-cols-2 py-[100px]  gap-[20px]">
       {/* left */}
-      <div className="col-span-2 space-y-12">
-        <h1>{nameLang(tours, language)}</h1>
+      <div className="col-span-2 space-y-12 ">
+        <h1 className="ml:text-[32px]">{nameLang(tours, language)}</h1>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 ml:w-full">
           <div className="w-full aspect-video relative">
             <Image
               src={src}
@@ -32,9 +32,9 @@ const Container2 = () => {
               alt="img"
               unoptimized
             />
-            <div className="bg-orange text-white absolute top-8 left-8 py-2 px-8 flex flex-col items-center rounded-full">
+            <div className="bg-orange text-white absolute top-8 left-8 py-2 px-8 flex flex-col items-center rounded-full ml:top-2 ml:left-2 ml:w-[100px]">
               {/* <span className='text-[24px] font-bold'>01</span> */}
-              <span className="text-[24px] font-bold">
+              <span className="text-[24px] font-bold ml:text-[10px]">
                 {new Date(tours?.created_at)?.toLocaleDateString()}
               </span>
             </div>
@@ -114,7 +114,7 @@ const Container2 = () => {
       </div>
 
       {/* right */}
-      <div className="col-span-1 flex flex-col items-start ml-[50px]">
+      {/* <div className="col-span-1 flex flex-col items-start ml-[50px]">
         <h3 className="text-black font-semibold text-[18px] mb-[40px]">
           {language["another_tours"]}
         </h3>
@@ -131,7 +131,7 @@ const Container2 = () => {
             </a>
           </Link>
         ))}
-      </div>
+      </div> */}
       <div className="about_pay">
         <button className="text-[14px] font-[700] text-white leading-[53px] px-[46px] relative overflow-hidden mt-[50px] sm:mt-[80px] rounded-[100vmax] button1">
           <div className="btn1-bg absolute inset-0 -z-[1]"></div>

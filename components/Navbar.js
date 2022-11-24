@@ -423,7 +423,7 @@ const Navbar = () => {
       <motion.div
         initial={{ height: 0 }}
         animate={{
-          height: isSidebarOpen ? "92vh" : "0",
+          height: isSidebarOpen ? "85vh" : "0",
           opacity: isSidebarOpen ? 1 : 0,
         }}
         transition={{ type: "spring", stiffness: 60 }}
@@ -450,7 +450,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/about">
+            <Link href="/about-us">
               <a
                 onClick={() => setIsSidebarOpen(false)}
                 className="text-[24px] font-beyond lowercase text-white tracking-wider font-[500] py-[10px] relative group"

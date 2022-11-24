@@ -166,6 +166,7 @@ a {
   cursor: pointer;
 }
 
+
 @media screen and (max-width: 770px) {
   .login_container {
     width: 90%;

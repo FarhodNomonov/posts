@@ -20,12 +20,12 @@ const Namangan = () => {
         </h1>
       </div>
       z
-      <div className="main-div grid grid-cols-4 py-[50px] mt-[40vh]">
+      <div className="main-div grid grid-cols-3 py-[50px] mt-[40vh]">
         <div className="col-span-3 space-y-4">
-          <h1 className="text-orange">
+          <h1 className="text-orange ml:text-[30px]">
             {language["namangan"]}, {language["uzbekistan"]}
           </h1>
-          <h3 className="text-black">{language["namangan_about"]}</h3>
+          <h3 className="text-black ml:text-[20px]">{language["namangan_about"]}</h3>
           <p>{language["namangan_about_one"]}</p>
           <p>{language["namangan_about_two"]}</p>
           <p>{language["namangan_about_three"]}</p>
