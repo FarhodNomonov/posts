@@ -423,7 +423,7 @@ const Navbar = () => {
       <motion.div
         initial={{ height: 0 }}
         animate={{
-          height: isSidebarOpen ? "85vh" : "0",
+          height: isSidebarOpen ? "70vh" : "0",
           opacity: isSidebarOpen ? 1 : 0,
         }}
         transition={{ type: "spring", stiffness: 60 }}
