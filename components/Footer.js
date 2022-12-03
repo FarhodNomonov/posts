@@ -76,6 +76,11 @@ const Footer = () => {
                 {language["contact"]}
               </a>
             </li>
+            <li>
+              <a className="hover:text-orange" href="/oferta">
+                {language["oferta"]}
+              </a>
+            </li>
           </ul>
         </div>
 
