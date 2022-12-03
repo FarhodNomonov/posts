@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { getLanguage } from "../redux/selector";
 import Image from "next/image";
 import {
@@ -77,9 +78,9 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a className="hover:text-orange" href="/oferta">
-                {language["oferta"]}
-              </a>
+              <Link href="/oferta">
+                <a className="hover:text-orange">{language["oferta"]}</a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -132,7 +133,12 @@ const Footer = () => {
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
               />
               <img
-                style={{ width: "100px", height: "20px",padding: "2px",borderRadius: "4px" }}
+                style={{
+                  width: "100px",
+                  height: "20px",
+                  padding: "2px",
+                  borderRadius: "4px",
+                }}
                 className="bg-white"
                 src="https://cdn.paycom.uz/documentation_assets/payme_01.svg"
               />
