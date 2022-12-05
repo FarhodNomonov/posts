@@ -35,13 +35,25 @@ const Footer = () => {
           </p>
           <div className="flex gap-4 ml:justify-evenly ml:gap-0 ">
             <div className="border border-orange p-2 rounded-full">
-              <FaTelegramPlane />
+              <a
+                href="https://t.me/DUPPI_Travel"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaTelegramPlane />
+              </a>
             </div>
             <div className="border border-orange p-2 rounded-full">
               <FaFacebookF />
             </div>
             <div className="border border-orange p-2 rounded-full">
-              <FaInstagram />
+              <a
+                href="https://www.instagram.com/duppi_travel/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaInstagram />
+              </a>
             </div>
             <div className="border border-orange p-2 rounded-full">
               <FaTwitter />
@@ -113,7 +125,7 @@ const Footer = () => {
                   alt="img"
                 />
               </div>
-              <p>2556-808-8613, {language["mondayTo"]}</p>
+              <p><a href="tel:+998913556943">+998 91 355 69 43</a>, {language["mondayTo"]}</p>
             </li>
             <li className="flex gap-4 items-center">
               <div className="relative w-6 h-6">
@@ -124,7 +136,7 @@ const Footer = () => {
                   alt="img"
                 />
               </div>
-              <p>contactme@gmail.com</p>
+              <p>duppitravel@gmail.com</p>
             </li>
             <div className="flex gap-5">
               <img

@@ -93,11 +93,17 @@ const Navbar = () => {
       <div className="hidden sm:block bg-darkPurple py-[10px] text-white relative z-10">
         <div className="main-div flex items-center justify-between">
           <div className="flex items-center gap-[36px]">
-            <h6 className="">+45 345 3324 56789</h6>
+            <h6 className="">
+              <a href="tel:+998996340128">+998 99 634 01 28</a>
+            </h6>
             <div className="flex gap-[20px]">
-              <FaTelegramPlane className="text-[14px] hover:text-orange cursor-pointer" />
+              <a href="https://t.me/DUPPI_Travel" target="_blank" rel="noreferrer">
+                <FaTelegramPlane className="text-[14px] hover:text-orange cursor-pointer" />
+              </a>
               <FaFacebookF className="text-[14px] hover:text-orange cursor-pointer" />
-              <FaInstagram className="text-[14px] hover:text-orange cursor-pointer" />
+              <a href="https://www.instagram.com/duppi_travel/" target="_blank" rel="noreferrer">
+                <FaInstagram className="text-[14px] hover:text-orange cursor-pointer" />
+              </a>
               <FaWhatsapp className="text-[14px] hover:text-orange cursor-pointer" />
             </div>
           </div>
