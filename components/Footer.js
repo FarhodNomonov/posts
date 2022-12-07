@@ -27,11 +27,10 @@ const Footer = () => {
                 alt="img"
               />
             </div>
-            <span className=" leading-[1]">TRAVEL.UZ</span>
+            <span className=" leading-[1]">AKIFTOUR.UZ</span>
           </a>
           <p className="py-8 leading-[2]">
-            Suspendisse potenti. In faucibus massa. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Nullam eu convallis tortor.
+            Namangan viloyati, Namangan sh., B.Mashrab ko`chasi, 31-uy
           </p>
           <div className="flex gap-4 ml:justify-evenly ml:gap-0 ">
             <div className="border border-orange p-2 rounded-full">
@@ -125,7 +124,10 @@ const Footer = () => {
                   alt="img"
                 />
               </div>
-              <p><a href="tel:+998913556943">+998 91 355 69 43</a>, {language["mondayTo"]}</p>
+              <p>
+                <a href="tel:+998913556943">+998 91 355 69 43</a>,{" "}
+                {language["mondayTo"]}
+              </p>
             </li>
             <li className="flex gap-4 items-center">
               <div className="relative w-6 h-6">

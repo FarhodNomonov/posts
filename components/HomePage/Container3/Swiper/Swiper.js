@@ -83,7 +83,7 @@ export default function SwiperHotelList() {
                   <div className="px-[25px] text-[13px] text-white rounded-[14px] bg-orange leading-[27px] w-max mx-auto">
                     {new Date(res?.updated_at).toDateString()}
                   </div>
-                  <h1 className="text-[25px] lg:text-[30px] font-[700] text-white tracking-tighter text-center mt-auto">
+                  <h1 className="text-[16px] lg:text-[16px] font-[700] text-white tracking-tighter text-center mt-auto">
                     {nameLang(res, language)}
                   </h1>
                   {/* <p className='text-white text-center font-[200] leading-3'>From: $1450</p> */}

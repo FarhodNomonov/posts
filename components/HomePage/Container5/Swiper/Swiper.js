@@ -77,7 +77,7 @@ export default function SwiperHotelList() {
                 />
               </div>
               <div className="max-h-60 overflow-auto ...">
-                <div className=" text-black text-[18px] font-semibold tracking-wider w-[80%] font-sans">
+                <div className=" text-black text-[16px] font-semibold tracking-wider w-[80%] font-sans">
                   {nameLang(res, language)}
                 </div>
                 <div className="flex">
