@@ -67,8 +67,12 @@ const SamarkandTours = () => {
           <div className="py-[50px] flex flex-col gap-12 ">
             {getTours?.data?.map((resp) => {
               const src = `https://tours.techdatasoft.uz/cover/${resp?.cover}`;
+              console.log(resp, "iiiiiii");
               return (
-                <div className="flex gap-8 items-start ml:flex-col ml:w-full">
+                <div
+                  className="flex gap-8 items-start ml:flex-col ml:w-full"
+                  key={resp?.id}
+                >
                   <div className="w-[300px] shrink-0 aspect-[8/9] relative shadow-md ml:w-full">
                     <Image
                       src={src}
@@ -151,7 +155,6 @@ const SamarkandTours = () => {
                         )}
                       </div>
                     </div>
-
                     <Link href={`/about-tours/${resp?.id}`}>
                       <a>
                         <button className="text-[14px] font-[700] text-white p-4 bg-[#31124b] transition-all hover:shadow hover:shadow-[#31124b] px-[46px] lg:self-start mt-auto rounded-[100vmax]">

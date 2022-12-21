@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { nameLang, descriptionLang } from "../../../../utils/func";
 import { getLanguage } from "../../../../redux/selector";
-import ImagesVisa from "../../../../public/images/Visa_Inc._logo.svg.png";
 
 const Container2 = () => {
   const router = useRouter();
@@ -13,12 +12,11 @@ const Container2 = () => {
   const toursData = useSelector(({ tours }) => tours);
   const [tours] = toursData.filter((item) => item?.id === Number(id));
   const categories = useSelector(({ categories }) => categories);
-
   const { language } = getLanguage();
   const src = `https://tours.techdatasoft.uz/cover/${tours?.cover}`;
 
   return (
-    <div className="main-div grid grid-cols-2 py-[100px]  gap-[20px]">
+    <div className="main-div grid grid-cols-3 ml:grid-cols-1 py-[100px]  gap-[20px]">
       {/* left */}
       <div className="col-span-2 space-y-12 ">
         <h1 className="ml:text-[32px]">{nameLang(tours, language)}</h1>
@@ -114,24 +112,26 @@ const Container2 = () => {
       </div>
 
       {/* right */}
-      {/* <div className="col-span-1 flex flex-col items-start ml-[50px]">
+      <div className="col-span-1 flex flex-col ml:ml-[10px] items-start ml-[50px]">
         <h3 className="text-black font-semibold text-[18px] mb-[40px]">
           {language["another_tours"]}
         </h3>
 
-        {categories?.map((res) => (
-          <Link href={`/about-tours/${res?.id}`}>
-            <a>
-              <button
-                type="button"
-                className="text-[14px] font-[500] ml-4 tracking-wide cursor-pointer hover:text-darkPurple mb-[20px]"
-              >
-                {nameLang(res, language)}
-              </button>
-            </a>
-          </Link>
-        ))}
-      </div> */}
+        {categories?.map((res) => {
+          return (
+            <Link href={`/tourInfo/${res?.id}`} key={res?.id}>
+              <a>
+                <button
+                  type="button"
+                  className="text-[14px] font-[500] ml-4 tracking-wide cursor-pointer hover:text-darkPurple mb-[20px]"
+                >
+                  {nameLang(res, language)}
+                </button>
+              </a>
+            </Link>
+          );
+        })}
+      </div>
       <div className="about_pay">
         <button className="text-[14px] font-[700] text-white leading-[53px] px-[46px] relative overflow-hidden mt-[50px] sm:mt-[80px] rounded-[100vmax] button1">
           <div className="btn1-bg absolute inset-0 -z-[1]"></div>
