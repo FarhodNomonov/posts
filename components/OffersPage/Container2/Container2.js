@@ -76,7 +76,7 @@ const Container2 = ({ id }) => {
                   leaveFrom="transform scale-100 opacity-100"
                   leaveTo="transform scale-95 opacity-0"
                 >
-                  <Listbox.Options className="absolute border p-1 rounded shadow w-full bg-white z-10">
+                  <Listbox.Options className="absolute border p-1 rounded shadow bg-white z-10">
                     <Listbox.Option value={"all"}>
                       {({ active, selected }) => (
                         <p
