@@ -18,6 +18,7 @@ import { getUsersSuccess, getErrorUser } from "../redux/reducer/Auth/userSlice";
 import { getRequest } from "../utils/request";
 import { getCatergories } from "../redux/reducer/categories";
 import { getTours } from "../redux/reducer/tours";
+import { nameLang } from "../utils/func";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { language } = getLanguage();
   const user = useSelector(({ user }) => user?.user);
+  const categories = useSelector(({ categories }) => categories);
 
   useLayoutEffect(() => {
     const token = localStorage.getItem("token");
@@ -97,11 +99,19 @@ const Navbar = () => {
               <a href="tel:+998996340128">+998 99 634 01 28</a>
             </h6>
             <div className="flex gap-[20px]">
-              <a href="https://t.me/DUPPI_Travel" target="_blank" rel="noreferrer">
+              <a
+                href="https://t.me/DUPPI_Travel"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaTelegramPlane className="text-[14px] hover:text-orange cursor-pointer" />
               </a>
               <FaFacebookF className="text-[14px] hover:text-orange cursor-pointer" />
-              <a href="https://www.instagram.com/duppi_travel/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.instagram.com/duppi_travel/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaInstagram className="text-[14px] hover:text-orange cursor-pointer" />
               </a>
               <FaWhatsapp className="text-[14px] hover:text-orange cursor-pointer" />
@@ -231,13 +241,64 @@ const Navbar = () => {
 
             {/* tours */}
             <li>
-              <Link href="/tours">
+              {/* <Link href="/tours">
                 <a className="text-[13px] font-[600] py-[10px] relative group">
                   <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
                   {language["tours"]}
                 </a>
-              </Link>
+              </Link> */}
+
+              <Menu as="li" className="relative ">
+                {({ open }) => (
+                  <>
+                    <Menu.Button className="flex gap-1 items-center relative">
+                      <a className="text-[13px] font-[600] py-[10px] group">
+                        <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
+                        {language["tours"]}
+                      </a>
+                      <ChevronDownIcon
+                        className={`w-4 ${
+                          open ? "transform -rotate-180" : ""
+                        } transition-all`}
+                      />
+                    </Menu.Button>
+
+                    <Transition
+                      show={open}
+                      enter="transition duration-100 ease-out"
+                      enterFrom="transform scale-95 opacity-0"
+                      enterTo="transform scale-100 opacity-100"
+                      leave="transition duration-75 ease-out"
+                      leaveFrom="transform scale-100 opacity-100"
+                      leaveTo="transform scale-95 opacity-0"
+                    >
+                      <Menu.Items
+                        static
+                        className="absolute left-0 top-0 bg-white whitespace-nowrap text-slate-700 border shadow p-1 rounded outline-none"
+                      >
+                        {/* <Link href="/" className="border-2"> */}
+                        {categories?.map((item) => {
+                          return (
+                            <Menu.Item
+                              as="div"
+                              className="hover:bg-orange hover:text-white p-1 rounded"
+                            >
+                              <Link href={`/tourInfo/${item?.id}`}>
+                              <a>{nameLang(item, language)}</a>
+                              </Link>
+                              </Menu.Item>
+                              
+                          );
+                        })}
+                        {/* </Link> */}
+                        
+                      </Menu.Items>
+                    </Transition>
+                  </>
+                )}
+              </Menu>
             </li>
+
             {/*{language["offers"]} */}
             <li>
               <Link href="/about-us">
@@ -367,12 +428,55 @@ const Navbar = () => {
             </Menu>
             {/* tours */}
             <li>
-              <Link href="/tours">
-                <a className="text-[13px] font-[600] py-[10px] relative group">
-                  <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
-                  {language["tours"]}
-                </a>
-              </Link>
+            <Menu as="li" className="relative ">
+                {({ open }) => (
+                  <>
+                    <Menu.Button className="flex gap-1 items-center relative">
+                      <a className="text-[13px] font-[600] py-[10px] group">
+                        <div className="h-[2px] w-0 group-hover:w-[105%] transition-all lbg absolute top-full left-0"></div>
+                        {language["tours"]}
+                      </a>
+                      <ChevronDownIcon
+                        className={`w-4 ${
+                          open ? "transform -rotate-180" : ""
+                        } transition-all`}
+                      />
+                    </Menu.Button>
+
+                    <Transition
+                      show={open}
+                      enter="transition duration-100 ease-out"
+                      enterFrom="transform scale-95 opacity-0"
+                      enterTo="transform scale-100 opacity-100"
+                      leave="transition duration-75 ease-out"
+                      leaveFrom="transform scale-100 opacity-100"
+                      leaveTo="transform scale-95 opacity-0"
+                    >
+                      <Menu.Items
+                        static
+                        className="absolute left-0 top-0 bg-white whitespace-nowrap text-slate-700 border shadow p-1 rounded outline-none"
+                      >
+                        {/* <Link href="/" className="border-2"> */}
+                        {categories?.map((item) => {
+                          return (
+                            <Menu.Item
+                              as="div"
+                              className="hover:bg-orange hover:text-white p-1 rounded"
+                            >
+                              <Link href={`/tourInfo/${item?.id}`}>
+                              <a>{nameLang(item, language)}</a>
+                              </Link>
+                              </Menu.Item>
+                              
+                          );
+                        })}
+                        {/* </Link> */}
+                        
+                      </Menu.Items>
+                    </Transition>
+                  </>
+                )}
+              </Menu>
             </li>
 
             <li>

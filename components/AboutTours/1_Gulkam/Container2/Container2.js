@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { nameLang, descriptionLang } from "../../../../utils/func";
 import { getLanguage } from "../../../../redux/selector";
+import { AccordionTop } from "../../../../public/icons";
 
 const Container2 = () => {
   const router = useRouter();
@@ -14,9 +15,55 @@ const Container2 = () => {
   const categories = useSelector(({ categories }) => categories);
   const { language } = getLanguage();
   const src = `https://tours.techdatasoft.uz/cover/${tours?.cover}`;
+  const [openAccordion, setOpenAccordion] = React.useState(null);
+
+  const accordion_data = [
+    {
+      id: 1,
+      title: " А вы можете меня встретить с вокзала/аэропорта?",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora necessitatibus facere corrupti. Dolorum recusandae quo commodi velit eos perferendis odit ducimus incidunt, quia voluptas provident dolores illo tenetur sunt, quidem iure corporis maiores? Iusto incidunt dolorem et ab, tempore molestiae aliquam adipisci. Ducimus, delectus cumque fugit omnis perferendis asperiores rem! Voluptates",
+      icon: <AccordionTop />,
+    },
+    {
+      id: 2,
+      title: " А вы можете меня встретить с вокзала/аэропорта?",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora necessitatibus facere corrupti. Dolorum recusandae quo commodi velit eos perferendis odit ducimus incidunt, quia voluptas provident dolores illo tenetur sunt, quidem iure corporis maiores? Iusto incidunt dolorem et ab, tempore molestiae aliquam adipisci. Ducimus, delectus cumque fugit omnis perferendis asperiores rem! Voluptates",
+      icon: <AccordionTop />,
+    },
+    {
+      id: 3,
+      title: " А вы можете меня встретить с вокзала/аэропорта?",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora necessitatibus facere corrupti. Dolorum recusandae quo commodi velit eos perferendis odit ducimus incidunt, quia voluptas provident dolores illo tenetur sunt, quidem iure corporis maiores? Iusto incidunt dolorem et ab, tempore molestiae aliquam adipisci. Ducimus, delectus cumque fugit omnis perferendis asperiores rem! Voluptates",
+      icon: <AccordionTop />,
+    },
+    {
+      id: 4,
+      title: " А вы можете меня встретить с вокзала/аэропорта?",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora necessitatibus facere corrupti. Dolorum recusandae quo commodi velit eos perferendis odit ducimus incidunt, quia voluptas provident dolores illo tenetur sunt, quidem iure corporis maiores? Iusto incidunt dolorem et ab, tempore molestiae aliquam adipisci. Ducimus, delectus cumque fugit omnis perferendis asperiores rem! Voluptates",
+      icon: <AccordionTop />,
+    },
+    {
+      id: 5,
+      title: " А вы можете меня встретить с вокзала/аэропорта?",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora necessitatibus facere corrupti. Dolorum recusandae quo commodi velit eos perferendis odit ducimus incidunt, quia voluptas provident dolores illo tenetur sunt, quidem iure corporis maiores? Iusto incidunt dolorem et ab, tempore molestiae aliquam adipisci. Ducimus, delectus cumque fugit omnis perferendis asperiores rem! Voluptates",
+      icon: <AccordionTop />,
+    },
+  ];
+  const close = (index) => {
+    if (openAccordion === index) {
+      return setOpenAccordion(null);
+    }
+    setOpenAccordion(index);
+    console.log(openAccordion, index);
+  };
 
   return (
-    <div className="main-div grid grid-cols-3 ml:grid-cols-1 py-[100px]  gap-[20px]">
+    <div className="main-div grid grid-cols-2 ml:grid-cols-1 py-[100px]  gap-[20px]">
       {/* left */}
       <div className="col-span-2 space-y-12 ">
         <h1 className="ml:text-[32px]">{nameLang(tours, language)}</h1>
@@ -41,10 +88,46 @@ const Container2 = () => {
             <h3 className="text-black font-semibold">
               {nameLang(tours, language)}
             </h3>
+            <div className="accordion rounded border-inherit select-none">
+              {accordion_data?.map((item, index) => (
+                <React.Fragment key={index}>
+                  <div className="mx-auto ">
+                    <div
+                      onClick={() => close(index)}
+                      className="mt-1  cursor-pointer  py-2 px-[10px] text-white flex justify-between items-center rounded border-inherit border-solid border transition-all delay-500"
+                    >
+                      <h3 className="text-base text-gray-600 text-left">
+                        {item?.title}
+                      </h3>
+                      <span className="title_scg ">{item?.icon}</span>
+                    </div>
+                    {openAccordion === index ? (
+                      <p className="text-[#2B2B2B] px-5 py-3 ">
+                        {item?.description}
+                      </p>
+                    ) : null}
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
             <p className="leading-[2.14] mt-6 mb-8">
               {descriptionLang(tours, language)}
             </p>
-            {/* <a className='text-[14px] font-[700] text-orange hover:text-darkPurple transition-all' href="#">READ MORE</a> */}
+            <div className="prices">
+              <h3 className="text-orange font-semibold mb-2">Prices</h3>
+              <div className="price_card flex bg-slate-100 p-2 rounded text-black justify-between mb-3">
+                <p>1 person</p>
+                <a>${tours?.price}</a>
+              </div>
+              <div className="price_card flex bg-slate-100 p-2 rounded text-black justify-between mb-3">
+                <p>2 person</p>
+                <a>${tours?.price * 60 / 100}</a>
+              </div>
+              <div className="price_card flex bg-slate-100 p-2 rounded text-black justify-between mb-3">
+                <p>3 person</p>
+                <a>${tours?.price * 70 / 100}</a>
+              </div>
+            </div>
             <div className="flex gap-5">
               <form
                 method="POST"
@@ -112,7 +195,7 @@ const Container2 = () => {
       </div>
 
       {/* right */}
-      <div className="col-span-1 flex flex-col ml:ml-[10px] items-start ml-[50px]">
+      {/* <div className="col-span-1 flex flex-col ml:ml-[10px] items-start ml-[50px]">
         <h3 className="text-black font-semibold text-[18px] mb-[40px]">
           {language["another_tours"]}
         </h3>
@@ -131,7 +214,7 @@ const Container2 = () => {
             </Link>
           );
         })}
-      </div>
+      </div> */}
       <div className="about_pay">
         <button className="text-[14px] font-[700] text-white leading-[53px] px-[46px] relative overflow-hidden mt-[50px] sm:mt-[80px] rounded-[100vmax] button1">
           <div className="btn1-bg absolute inset-0 -z-[1]"></div>

@@ -25,7 +25,7 @@ const Container1 = () => {
           objectFit="cover"
           alt="img"
         />
-        <h1 className="absolute z-10 text-white text-[30px] xs:text-[50px] xs:mt-20 ml:text-[32px] ml:text-center">
+        <h1 className="absolute z-10 text-white text-[30px] xs:text-[50px] xs:mt-20 ml:text-[25px] ml:text-center">
           {nameLang(isActiveTour, language)}
         </h1>
       </div>
