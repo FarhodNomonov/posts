@@ -1,4 +1,6 @@
 import React, { useRef, useState } from "react";
+import Link from "next/link";
+
 import { useSelector } from "react-redux";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -95,13 +97,11 @@ export default function SwiperHotelList() {
                   <div className="text-center">
                     <button className="text-[13px] font-[700] text-white leading-[50px] lg:leading-[40px] px-[35px] lg:px-[40px] relative z-[1] overflow-hidden mt-[20px] lg:mt-[40px] rounded-[100vmax] button1">
                       <div className="btn1-bg absolute inset-0"></div>
-                      <a
-                        span
-                        className="relative"
-                        href={`/about-uzbekistan/tours/${res?.id}`}
-                      >
-                        {language["read"]}
-                      </a>
+                      <Link href={`/tourInfo/${res?.id}`}>
+                        <a span className="relative">
+                          {language["read"]}
+                        </a>
+                      </Link>
                     </button>
                   </div>
                 </div>
