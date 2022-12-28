@@ -57,7 +57,7 @@ export default function SwiperSection() {
                         }}
                         className="flex justify-center items-center flex-col text-white h-full"
                       >
-                        <h1 className="text-white text-[50px] xs:text-[80px] sm:text-[112px] font-[900] leading-[1.2]">
+                        <h1 className="text-white text-[50px] xs:text-[80px] sm:text-[112px] mb-[30px] font-[900] leading-[1.2]">
                           {titleLang(item, language)}
                         </h1>
                         <h1 className="text-white font-beyond text-[40px] xs:text-[70px] sm:text-[100px] leading-[1.2] -mt-[15px] xs:-mt-[25px] sm:-mt-[34px]">

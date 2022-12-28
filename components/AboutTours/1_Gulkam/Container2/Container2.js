@@ -7,6 +7,7 @@ import { nameLang, descriptionLang } from "../../../../utils/func";
 import { getLanguage } from "../../../../redux/selector";
 import { AccordionTop } from "../../../../public/icons";
 
+
 const Container2 = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -116,15 +117,15 @@ const Container2 = () => {
             <div className="prices">
               <h3 className="text-orange font-semibold mb-2">Prices</h3>
               <div className="price_card flex bg-slate-100 p-2 rounded text-black justify-between mb-3">
-                <p>1 person</p>
+                <p>1 {language["person"]}</p>
                 <a>${tours?.price}</a>
               </div>
               <div className="price_card flex bg-slate-100 p-2 rounded text-black justify-between mb-3">
-                <p>2 person</p>
+                <p>2 {language["person"]}</p>
                 <a>${tours?.price * 60 / 100}</a>
               </div>
               <div className="price_card flex bg-slate-100 p-2 rounded text-black justify-between mb-3">
-                <p>3 person</p>
+                <p>3 {language["person"]}</p>
                 <a>${tours?.price * 70 / 100}</a>
               </div>
             </div>

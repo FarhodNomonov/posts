@@ -70,8 +70,8 @@
     "oferta8" : "What are the security policies of linked third-party sites? This web site may contain links to other web sites. Please note that if you click on one of these links, you are moving to a third-party web site. We encourage you to read the privacy statements of these linked sites as their privacy policy may differ from ours. This privacy statement applies solely to information collected by this web site.",
     "oferta9" : "What else should I know about internet security? Unfortunately, no data transmission over the Internet can be guaranteed to be 100% secure. We strive to protect your personal information. Akiftour, however, cannot ensure or warrant the security of any information you transmit to us and any information you submit on-line is done voluntarily and at your own risk. Once we receive your transmission, we make our best effort to ensure its security on our systems. No personal information is stored on our website to further secure your personal information.",
     "oferta10" : "What is a cookie? A cookie is a small data file that is stored locally on your computer that allows specific information to be saved and retrieved when the site requires it. Our web site does not employ cookie.",
-    "oferta11" : "How do I contact Akif tour? Should you have other questions or concerns about this privacy policy or your electronic records maintained by Akiftour, please contact us."
-   
+    "oferta11" : "How do I contact Akif tour? Should you have other questions or concerns about this privacy policy or your electronic records maintained by Akiftour, please contact us.",
+    "person" : "Person"
     
   },
   "ru": {
@@ -145,7 +145,8 @@
     "oferta8" : "Каковы политики безопасности сторонних сайтов, на которые даны ссылки? Этот веб-сайт может содержать ссылки на другие веб-сайты. Пожалуйста, обратите внимание, что если вы нажмете на одну из этих ссылок, вы перейдете на сторонний веб-сайт. Мы рекомендуем вам ознакомиться с заявлениями о конфиденциальности этих сайтов, на которые даны ссылки, поскольку их политика конфиденциальности может отличаться от нашей. Это заявление о конфиденциальности применяется исключительно к информации, собранной этим веб-сайтом.",
     "oferta9" : "Что еще я должен знать об интернет-безопасности? К сожалению, никакая передача данных через Интернет не может быть гарантирована на 100% безопасной. Мы стремимся защитить вашу личную информацию. Akiftour, однако, не может гарантировать безопасность любой информации, которую вы нам передаете, и любая информация, которую вы предоставляете онлайн, делается добровольно и на ваш собственный риск. Как только мы получаем вашу передачу, мы прилагаем все усилия, чтобы обеспечить ее безопасность в наших системах. Никакая личная информация не хранится на нашем веб-сайте для дополнительной защиты вашей личной информации.",
     "oferta10" : "Что такое печенье? Файл cookie - это небольшой файл данных, который хранится локально на вашем компьютере и позволяет сохранять и извлекать определенную информацию, когда это требуется сайту. Наш веб-сайт не использует файлы cookie.",
-    "oferta11" : "Как мне связаться с Akif tour? Если у вас есть другие вопросы или опасения по поводу этой политики конфиденциальности или ваших электронных записей, которые ведет Akiftour, пожалуйста, свяжитесь с нами."
+    "oferta11" : "Как мне связаться с Akif tour? Если у вас есть другие вопросы или опасения по поводу этой политики конфиденциальности или ваших электронных записей, которые ведет Akiftour, пожалуйста, свяжитесь с нами.",
+    "person" : "Человек"
   },
   "uz": {
     "global": "uz",
@@ -218,7 +219,7 @@
     "oferta8" : "Bog'langan uchinchi tomon saytlarining xavfsizlik siyosati qanday? Ushbu veb-saytda boshqa veb-saytlarga havolalar bo'lishi mumkin. E'tibor bering, agar siz ushbu havolalardan birini bosgan bo'lsangiz, siz uchinchi tomon veb-saytiga o'tasiz. Biz ularning maxfiylik siyosati biznikidan farq qilishi mumkin, deb bu bog'liq saytlar maxfiylik bayonotlar o'qib sizni rag'batlantirish. Ushbu maxfiylik bayonoti faqat ushbu veb-sayt tomonidan to'plangan ma'lumotlarga nisbatan qo'llaniladi.",
     "oferta9" : "Internet xavfsizligi haqida yana nimani bilishim kerak? Afsuski, Internet orqali hech qanday ma'lumot uzatish 100% xavfsiz bo'lishi kafolatlanmaydi. Biz sizning shaxsiy ma'lumotlaringizni himoya qilishga intilamiz. Akiftour, ammo, ta'minlash yoki bizga uzatish har qanday axborot xavfsizligini kafolat mumkin emas va siz on-line taqdim har qanday axborot ixtiyoriy ravishda va o'z xavfi amalga oshiriladi. Sizning uzatishingizni olganimizdan so'ng, biz uning xavfsizligini tizimlarimizda ta'minlash uchun qo'limizdan kelganicha harakat qilamiz. Shaxsiy ma'lumotlaringizni yanada himoya qilish uchun veb-saytimizda shaxsiy ma'lumotlar saqlanmaydi.",
     "oferta10" : "Cookie nima? Cookie-bu sizning kompyuteringizda mahalliy sifatida saqlanadigan kichik ma'lumotlar fayli bo'lib, sayt talab qilganda aniq ma'lumotlarni saqlash va olish imkonini beradi. Bizning veb-sayt cookie ish emas.",
-    "oferta11" : "Qanday qilib Akif tour murojaat qilasiz? Ushbu maxfiylik siyosati yoki akiftour tomonidan yuritiladigan elektron yozuvlaringiz haqida boshqa savollaringiz yoki tashvishlaringiz bo'lsa, iltimos biz bilan bog'laning."
-  
+    "oferta11" : "Qanday qilib Akif tour murojaat qilasiz? Ushbu maxfiylik siyosati yoki akiftour tomonidan yuritiladigan elektron yozuvlaringiz haqida boshqa savollaringiz yoki tashvishlaringiz bo'lsa, iltimos biz bilan bog'laning.",
+    "person" : "Shaxs"
   }
 }
