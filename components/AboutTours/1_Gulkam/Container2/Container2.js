@@ -7,7 +7,6 @@ import { nameLang, descriptionLang } from "../../../../utils/func";
 import { getLanguage } from "../../../../redux/selector";
 import { AccordionTop } from "../../../../public/icons";
 
-
 const Container2 = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -122,11 +121,11 @@ const Container2 = () => {
               </div>
               <div className="price_card flex bg-slate-100 p-2 rounded text-black justify-between mb-3">
                 <p>2 {language["person"]}</p>
-                <a>${tours?.price * 60 / 100}</a>
+                <a>${(tours?.price * 60) / 100}</a>
               </div>
               <div className="price_card flex bg-slate-100 p-2 rounded text-black justify-between mb-3">
                 <p>3 {language["person"]}</p>
-                <a>${tours?.price * 70 / 100}</a>
+                <a>${(tours?.price * 70) / 100}</a>
               </div>
             </div>
             <div className="flex gap-5">
@@ -138,12 +137,17 @@ const Container2 = () => {
                 <input
                   type="hidden"
                   name="merchant"
-                  defaultValue="6380c6ff4050a4f685343840"
-                />
+                  defaultValue="63c66eb72ef2d4e9e90c1f77"
+                />{" "}
                 <input
                   type="hidden"
                   name="amount"
                   defaultValue={tours?.price * 11200 + "00"}
+                />
+                <input
+                  type="hidden"
+                  name="account[tour_name]"
+                  defaultValue="DUPPI TRAVEL"
                 />
                 <button
                   type="submit"
@@ -160,14 +164,13 @@ const Container2 = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <p className="p-2 text-black"> ${tours?.price} </p>
-
                   <img
                     style={{ width: "160px", height: "20px" }}
                     src="http://cdn.payme.uz/buttons/button_big_RU.svg"
                   />
-                </button>
+                </button>{" "}
               </form>
+
               <button
                 type="submit"
                 className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ... font-[700] leading-[53px] px-[30px]"
