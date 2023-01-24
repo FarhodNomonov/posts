@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import Image from "next/image";
 import { nameLang, descriptionLang } from "../../../../utils/func";
 import { getLanguage } from "../../../../redux/selector";
@@ -12,7 +11,7 @@ const Container2 = () => {
   const { id } = router.query;
   const toursData = useSelector(({ tours }) => tours);
   const [tours] = toursData.filter((item) => item?.id === Number(id));
-  const categories = useSelector(({ categories }) => categories);
+  // const categories = useSelector(({ categories }) => categories);
   const { language } = getLanguage();
   const src = `https://tours.techdatasoft.uz/cover/${tours?.cover}`;
   const [openAccordion, setOpenAccordion] = React.useState(null);
@@ -138,7 +137,7 @@ const Container2 = () => {
                   type="hidden"
                   name="merchant"
                   defaultValue="63c66eb72ef2d4e9e90c1f77"
-                />{" "}
+                />
                 <input
                   type="hidden"
                   name="amount"
@@ -168,7 +167,8 @@ const Container2 = () => {
                     style={{ width: "160px", height: "20px" }}
                     src="http://cdn.payme.uz/buttons/button_big_RU.svg"
                   />
-                </button>{" "}
+                  <p className="p-2 text-black"> ${tours?.price} </p>
+                </button>
               </form>
 
               <button
@@ -186,8 +186,6 @@ const Container2 = () => {
                   justifyContent: "center",
                 }}
               >
-                <p className="p-2 text-black"> ${tours?.price} </p>
-
                 <img
                   style={{ width: "160px", height: "20px" }}
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1200px-Visa_Inc._logo.svg.png"
