@@ -74,8 +74,8 @@
     "person" : "Person",
     "upcoming" : "UPCOMING",
     "in" : "in",
-    "days" : "Day"
-    
+    "days" : "Day",
+    "more" : "More"
   },
   "ru": {
     "global": "ru",
@@ -152,7 +152,8 @@
     "person" : "Человек",
     "upcoming" : "предстоящий",
     "in" : "в",
-    "days" : "День"
+    "days" : "День",
+    "more" : "Больше"
   },
   "uz": {
     "global": "uz",
@@ -229,6 +230,7 @@
     "person" : "Shaxs",
     "upcoming" : "Kelgusi",
     "in" : "ichida",
-    "days" : "Kun"
+    "days" : "Kun",
+    "more" : "Ko`proq"
   }
 }

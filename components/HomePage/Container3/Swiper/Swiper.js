@@ -21,6 +21,7 @@ import { getLanguage } from "../../../../redux/selector/index";
 export default function SwiperHotelList() {
   const tours = useSelector(({ tours }) => tours);
   const { language } = getLanguage();
+  const [index, setIndex] = React.useState(3);
 
   // const Retings = (res) => {
   //   let copyItems = [];
@@ -43,8 +44,8 @@ export default function SwiperHotelList() {
         <p className="text-base text-black font-normal">Price</p>
       </div>
       <div className="tours_box mt-[20px]">
-        {tours.map((res) => {
-          return (
+        {tours.map((res, i) => {
+          return i <= index ? (
             <Link href={`/tourInfo/${res?.id}`}>
               <div className="tours_box_in w-full p-2 rounded-[54px] bg-[#350A4E] flex gap-[20px] justify-around items-center mb-[20px] ml:flex-col">
                 <div className="w-[20%] bg-[#FA9E1B] rounded-l-[54px] flex justify-center items-center text-center ml:w-[80%] ml:rounded-[4px] ml:p-[7px]">
@@ -74,8 +75,16 @@ export default function SwiperHotelList() {
                 </div>
               </div>
             </Link>
-          );
+          ) : null;
         })}
+        {tours?.length <= index ? (
+          null
+        ) : <button
+        onClick={() => setIndex((prev) => prev + 4)}
+        className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow flex justify-center m-auto"
+      >
+        {language["more"]}
+      </button>}
       </div>
     </div>
   );
