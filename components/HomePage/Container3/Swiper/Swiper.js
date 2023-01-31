@@ -47,7 +47,7 @@ export default function SwiperHotelList() {
         {tours.map((res, i) => {
           return i <= index ? (
             <Link href={`/tourInfo/${res?.id}`}>
-              <div className="tours_box_in w-full p-2 rounded-[54px] bg-[#350A4E] flex gap-[20px] justify-around items-center mb-[20px] ml:flex-col">
+              <div className="relative tours_box_in w-full p-2 rounded-[54px] bg-[#350A4E] flex gap-[20px] justify-around items-center mb-[20px] ml:flex-col">
                 <div className="w-[20%] bg-[#FA9E1B] rounded-l-[54px] flex justify-center items-center text-center ml:w-[80%] ml:rounded-[4px] ml:p-[7px]">
                   <h1 className="text-white text-[30px] font-black ml:text-[16px]">
                     {new Date(res?.updated_at).toDateString()}

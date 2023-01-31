@@ -127,7 +127,7 @@ const Container2 = () => {
               <p className="leading-[2.14] mt-6 mb-8">
                 {descriptionLang(tours, language)}
               </p>
-              <div className="prices">
+              <div className="prices w-[39%] ml:w-[100%]">
                 <h3 className="text-orange font-semibold mb-2">Prices</h3>
                 <div className="price_card flex p-2 rounded text-black justify-between">
                   <p className="ml-[40px]"></p>

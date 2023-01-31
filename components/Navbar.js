@@ -168,7 +168,7 @@ const Navbar = () => {
         <div className="main-div flex items-center justify-between h-full">
           {/* logo */}
           <Link href="/">
-            <a className="h-[100px] w-[300px] relative">
+            <a className="h-[100px] w-[200px] relative">
               <Image
                 layout="fill"
                 objectFit="contain"
@@ -354,7 +354,7 @@ const Navbar = () => {
         <div className="main-div flex items-center justify-between h-full">
           {/* logo */}
           <Link href="/">
-            <a className="h-[100px] w-[300px] relative">
+            <a className="h-[100px] w-[200px] relative">
               <Image
                 layout="fill"
                 objectFit="contain"
