@@ -262,18 +262,17 @@ const Container2 = ({ id }) => {
               const src = `https://tours.techdatasoft.uz/cover/${res?.cover}`;
 
               return (
-                <div className="flex flex-col gap-8" key={res?.id}>
-                  <div className="max-w-[350px] w-full aspect-[7/6] relative shadow-md">
+                <div className="flex flex-row gap-8 ml:flex-col" key={res?.id}>
+                  <div className="max-w-[350px] w-full aspect-[7/6]  relative shadow-md ml:w-[100%]">
                     <Image
                       src={src}
                       layout="fill"
                       objectFit="cover"
                       alt="img"
                       unoptimized
+                      className="rounded-[20px] "
                     />
-                    <div className="absolute bg-orange bottom-8 text-[30px] text-white font-semibold px-4 w-[80%] ml:text-base  ">
-                      {nameLang(res, language)}
-                    </div>
+                   
                   </div>
                   <div className="flex flex-col">
                     <div className="flex justify-between items-center">
@@ -281,9 +280,9 @@ const Container2 = ({ id }) => {
                         <h1 className="text-orange leading-[1]">
                           ${res?.price}
                         </h1>
-                        <span>starting</span>
+                        <span> /persons</span>
                       </div>
-                      <div className="flex items-center align-right gap-2">
+                      {/* <div className="flex items-center align-right gap-2">
                         <div>
                           <p className="text-[12px] text-black font-semibold">
                             DAY
@@ -293,17 +292,22 @@ const Container2 = ({ id }) => {
                         <div className="w-[50px] h-[50px] bg-orange rounded-full flex justify-center items-center text-white text-[20px] font-bold">
                           {res?.days}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
-                    <div className="flex mt-[10px]">
+                    {/* <div className="flex mt-[10px]">
                       {Retings(res?.gradle).map((i) => {
                         return <StarIcon key={i} className="w-4 text-orange" />;
                       })}
+                    </div> */}
+                     <div className="font-black ">
+                      {nameLang(res, language)}
                     </div>
                     <p className="py-4 leading-[2]">
                       {descriptionLang(res, language)}
                     </p>
-                    <div className="flex gap-4">
+                    <p className="leading-[2] font-bold">{res?.direction}</p>
+
+                    <div className="flex gap-4 mb-4">
                       <div className="w-7 h-7 relative">
                         {res?.turn === 1 && (
                           <Image
@@ -345,7 +349,6 @@ const Container2 = ({ id }) => {
                         )}
                       </div>
                     </div>
-                    <p className="py-4 leading-[2]">{res?.direction}</p>
                     <Link href={`/about-tours/${res?.id}`}>
                       <a>
                         <button className="text-[14px] font-[700] text-white p-4 bg-[#31124b] transition-all hover:shadow hover:shadow-[#31124b] px-[46px] lg:self-start mt-auto rounded-[100vmax]">
