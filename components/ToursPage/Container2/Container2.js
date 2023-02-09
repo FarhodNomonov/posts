@@ -263,7 +263,7 @@ const Container2 = ({ id }) => {
 
               return (
                 <div className="flex flex-row gap-8 ml:flex-col" key={res?.id}>
-                  <div className="max-w-[350px] w-full aspect-[7/6]  relative shadow-md ml:w-[100%]">
+                  <div className="max-w-[350px] w-full aspect-[7/6]  relative shadow-md ml:w-[100%] ml:max-w-[100%] rounded-[20px]">
                     <Image
                       src={src}
                       layout="fill"
